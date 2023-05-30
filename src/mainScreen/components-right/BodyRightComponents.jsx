@@ -2,7 +2,7 @@ import React from 'react';
 
 function BodyRightComponents(props) {
     return (
-        <div>
+        <div className={"bodyRightComponents"}>
 
         </div>
     );

@@ -4,15 +4,16 @@ import Header from "./Header";
 import BodyLeftComponents from "./components-left/BodyLeftComponents";
 import BodyRightComponents from "./components-right/BodyRightComponents";
 import Footer from "./Footer";
+import "./MainScreen.css"
 
 
 function MainScreen(props) {
 
     return (
-        <div>
+        <div className={"mainScreen"}>
             <NavigationBar />
             <Header />
-            <div >
+            <div className={"body"}>
                 <BodyLeftComponents />
                 <BodyRightComponents />
             </div>
