@@ -3,7 +3,8 @@
     height: 35px;
     background: aliceblue;
     display: inline-block;
-    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
 }
 .body{
     width: 100%;

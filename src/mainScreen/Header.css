@@ -2,7 +2,11 @@
     width: 100%;
     height: 200px;
     display: block;
+    background: blueviolet;
 }
-.special_menu{
+.special-menu{
     display: flex;
+    background: aqua;
+    width: 100%;
+    height: 50px;
 }

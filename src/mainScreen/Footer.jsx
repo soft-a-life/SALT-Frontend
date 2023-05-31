@@ -1,9 +1,12 @@
 import React from 'react';
+import "./Footer.css"
 
 function Footer(props) {
-    return (
-        <div>
 
+
+    return (
+        <div className={"footer"}>
+            푸터
         </div>
     );
 }
