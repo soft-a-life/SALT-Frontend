@@ -1,0 +1,9 @@
+.postContent{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    float: left;
+}
