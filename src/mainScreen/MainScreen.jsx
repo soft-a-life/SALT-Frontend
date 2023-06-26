@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavigationBar from "./NavigationBar";
 import Header from "./Header";
 import BodyLeftComponents from "./components-left/BodyLeftComponents";
@@ -8,6 +8,8 @@ import "./MainScreen.css"
 
 
 function MainScreen(props) {
+
+    const [category, setCategory] = useState('');
 
     return (
         <div className={"mainScreen"}>

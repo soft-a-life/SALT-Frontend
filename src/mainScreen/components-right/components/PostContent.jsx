@@ -1,10 +1,12 @@
 import React from 'react';
 import "./PostContent.css"
+import {Link} from "react-router-dom";
 
 function PostContent(props) {
 
     const {
-        key,
+        index,
+        contentKey,
         category,
         title,
         user,
@@ -14,17 +16,19 @@ function PostContent(props) {
     } = props;
 
     return (
-        <div className={"postContent"} key={key}>
-            <div style={{width:70+"%", display:"flex"}}>
-                <p>{category}</p>
-                <p>{title}</p>
+        <Link to={`/postViewPage/${contentKey}`}>
+            <div className={"postContent"} key={index} onClick={() => onPostCheck(contentKey)}>
+                    <div className={"lPost"}>
+                        <p>{category}</p>
+                        <p>{title}</p>
+                    </div>
+                    <div className={"rPost"}>
+                        <p>{user}</p>
+                        <p>{date}</p>
+                        <p>{views}</p>
+                    </div>
             </div>
-            <div style={{width:30+"%", display:"flex", justifyContent:"space-between"}}>
-                <p>{user}</p>
-                <p>{date}</p>
-                <p>{views}</p>
-            </div>
-        </div>
+        </Link>
     );
 }
 

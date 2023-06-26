@@ -1,6 +1,6 @@
 .mainScreen{
     width: 1080px;
-    height: 35px;
+    height: 100%;
     background: aliceblue;
     display: inline-block;
     margin-left: auto;

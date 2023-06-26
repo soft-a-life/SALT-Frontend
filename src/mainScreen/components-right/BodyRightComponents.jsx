@@ -2,15 +2,22 @@ import React, {useEffect, useState} from 'react';
 import "./BodyRightComponents.css"
 import PostContent from "./components/PostContent";
 
+const notification = [{postNum :"000", category : "공지",
+    title : "공지공지공지공지공지공지", user : "SAL", date:"2023.01.12", views: 0
+}];
+
 function BodyRightComponents(props) {
 
     const [content, setContent] = useState([
         {postNum :"000", category : "공지", title : "공지공지공지공지공지공지", user : "SAL",
         date:"2023.01.12", views: 0
     }]);
-    const [isCheck, setIsCheck] = useState(false)
+    const [isCheck, setIsCheck] = useState(false);
 
     useEffect(()=>{
+
+
+        //테스트용 데이터
         const postContent = [
             {postNum :"001", category : "java", title : "자바 기초 상속 강좌 영상 파트1", user : "kym",
              date:"2023.01.12", views: 231
@@ -37,22 +44,62 @@ function BodyRightComponents(props) {
                 date:"2023.01.12", views: 200
             },
         ];
+
+
         setContent(postContent);
+
+
     }, [])
 
     const changeBool = (e) => {
         if(e.target.checked) {
-            setIsCheck(true)
+            setIsCheck(true);
         }else{
-            setIsCheck(false)
+            setIsCheck(false);
         }
-        console.log(isCheck)
+        console.log("isCheck = ", isCheck);
     }
 
-    const onPostCheck = (e) => {
-        console.log(e.postNum," 번 글 학인")
+    //각 글들의 클릭 이벤트
+    const onPostCheck = (contentKey) => {
+        console.log(contentKey," 번 글 클릭");
     }
 
+
+    const notificationContent = () => {
+           return notification.map((e, index) => {
+                    return <PostContent
+                        key={index}
+                        contentKey={e.postNum}
+                        category={e.category}
+                        title={e.title}
+                        user={e.user}
+                        date={e.date}
+                        views={e.views}
+                        onPostCheck={(e) => {onPostCheck(e)}}
+                    />
+                }
+            )
+    }
+
+    const post = () => {
+        return content.map((e, index) => {
+                return <PostContent
+                    key={index}
+                    contentKey={e.postNum}
+                    category={e.category}
+                    title={e.title}
+                    user={e.user}
+                    date={e.date}
+                    views={e.views}
+                    onPostCheck={(e) => {
+                        onPostCheck(e)
+                    }}
+                />
+
+            }
+        )
+    }
     return (
         <div className={"bodyRightComponents"}>
             <h1>전체 글 보기</h1>
@@ -68,20 +115,16 @@ function BodyRightComponents(props) {
                 </div>
             </div>
             <div>
-                {content.map((e) => {
-
-                    console.log(e.postNum)
-
-                    return <PostContent
-                            key={e.postNum}
-                            category={e.category}
-                            title={e.title}
-                            user={e.user}
-                            date={e.date}
-                            views={e.views}
-                            onPostCheck={(e) => {onPostCheck(e)}}
-                    />
-                })}
+                <div className={"postHeader"}>
+                    <b className={"title"}>제목</b>
+                    <div className={"rightPostHeader"}>
+                        <b className={"user"}>작성자</b>
+                        <b className={"date"}>작성일</b>
+                        <b className={"views"}>조회</b>
+                    </div>
+                </div>
+                {isCheck ? null : notificationContent()}
+                {post()}
             </div>
         </div>
     );

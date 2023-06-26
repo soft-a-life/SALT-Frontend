@@ -3,7 +3,16 @@
     width: 100%;
     height: 20px;
     border-bottom: 1px solid grey;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     justify-content: space-between;
     float: left;
+}
+.lPost{
+    width:70%;
+    display:flex;
+}
+.rPost{
+    width:30%;
+    display:flex;
+    justify-content:space-between;
 }
