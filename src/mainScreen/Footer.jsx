@@ -6,7 +6,11 @@ function Footer(props) {
 
     return (
         <div className={"footer"}>
-            푸터
+             <div className="footer-text">salt 게시판</div>
+             <div className="divider">|</div>
+            <a className="footer-link" href="https://www.salt.com" target="_blank" rel="noopener noreferrer">
+                https://www.salt.com
+            </a>
         </div>
     );
 }

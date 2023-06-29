@@ -1,6 +1,13 @@
-.bodyLeftComponents{
+.bodyLeftComponents {
     width: 30%;
     height: 100%;
-    display: block;
-    background: brown;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
 }
