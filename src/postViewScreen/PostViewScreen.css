@@ -1,0 +1,8 @@
+.postViewScreen{
+    width: 1080px;
+    height: 100%;
+    background: aliceblue;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}

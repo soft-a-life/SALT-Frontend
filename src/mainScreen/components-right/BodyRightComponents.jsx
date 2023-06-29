@@ -6,6 +6,12 @@ const notification = [{postNum :"000", category : "공지",
     title : "공지공지공지공지공지공지", user : "SAL", date:"2023.01.12", views: 0
 }];
 
+/*
+*  작성일 : 23.06.29
+*  작성자 : 김영민
+*  기능명세 : 사용자 게시물 공지사항 제공 선택 시
+*           선택된 게시글로 이동한다.
+* */
 function BodyRightComponents(props) {
 
     const [content, setContent] = useState([
