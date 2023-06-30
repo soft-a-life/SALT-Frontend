@@ -1,31 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./NavigationBar.css"
-import {Link} from "react-router-dom";
 
-/*
-*  작성일 : 23.05.21
-*  변경일 : 23.06.29
-*  작성자 : 김영민
-*  변경자 : 김영민
-*  기능명세 : 페이지에 적용되는 네이비게이션 바
-*           외부 컴포넌트
-*  변경내용 :
-* */
 function NavigationBar(userObject) {
 
     const loggedOut = () => {
-       return <Link to={'/loginPage'}>
-            로그인
+        return <Link to="/loginPage">
+            <button className="login-button">로그인</button>
         </Link>
     }
 
     return (
         <div className={"navigationBar"}>
-            <div>
-
+            <div className={"logo-container"}>
+                로고 자리
             </div>
-            <div>
+            <div className="special-menu">
+                <button className="menu-item">메뉴1</button>
+                <button className="menu-item">메뉴2</button>
                 {userObject.userObjet.isLogin ?  <p>{userObject.userObjet.userId}</p> : loggedOut()}
+
+                <button className="Register-button">회원가입</button>
             </div>
         </div>
     );

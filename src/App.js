@@ -1,6 +1,6 @@
 import './App.css';
 import MainScreen from "./mainScreen/MainScreen";
-import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./navigationBar/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";

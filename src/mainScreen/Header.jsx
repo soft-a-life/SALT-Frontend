@@ -6,12 +6,8 @@ function Header(props) {
 
     return (
         <div className={"header"}>
-            {/*이미지 들어가는 부분*/}
-            이미지
-            <div className={"special-menu"}>
-                {/*메뉴바*/}
-                헤더 
-                앙 기모링
+            <div className="title">
+                SALT
             </div>
         </div>
     );
