@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
-import SignUpPage from "./userManagament/signupPage/SingUpPage"
+import SignUpPage from "./userManagament/signupPage/SingupPage"
 import {useState} from "react";
 
 /*
