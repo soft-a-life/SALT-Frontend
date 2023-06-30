@@ -12,9 +12,11 @@ function NavigationBar(userObject) {
 
     return (
         <div className={"navigationBar"}>
-            <div className={"logo-container"}>
-                로고 자리
-            </div>
+            <Link to={'/'}>
+                <div className={"logo-container"}>
+                    로고 자리
+                </div>
+            </Link>
             <div className="special-menu">
                 <button className="menu-item">메뉴1</button>
                 <button className="menu-item">메뉴2</button>
