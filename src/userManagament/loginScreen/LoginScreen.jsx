@@ -3,13 +3,14 @@ import {Link, useNavigate} from "react-router-dom";
 
 /*
 *  최초 작성일 : 23.06.23
-*  변경일 : 23.06.29
+*  변경일 : 23.06.30
 *  작성자 : 김영민
 *  변경자 : 김영민
 *  기능명세 : 로그인 기능
 *           회원가입, id/pw 찾기 상위 컴포넌트
 *  변경 내용 : 로그인 시 메인 페이지로 이동
 *            사용장 아이디 네이게이션에 출력
+*            텍스트 오브젝트 형식으로 가공
 * */
 function LoginScreen({loginBtn}) {
     const navigate = useNavigate();

@@ -1,5 +1,8 @@
-import React from 'react';
-
+/*
+*  작성일 : 23.06.30
+*  작성자 : 김영민
+*  기능명세 : 연월일시분 호출
+* */
 function TodayTimeFormal(props) {
     let now = new Date();
     let todayYear = now.getFullYear();
