@@ -23,6 +23,7 @@ function LoginScreen({loginBtn}) {
         setUserPw(e.target.value)
     }
     const loginConstraints = () => {
+        // 유효성 검사 추가해야 함
         loginBtn(userId)
         navigate("/")
     }

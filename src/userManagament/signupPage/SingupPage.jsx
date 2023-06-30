@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 /*
 *  최초 작성일 : 23.06.23
@@ -6,7 +6,13 @@ import React from 'react';
 *  기능명세 : 회원가입
 * */
 function SingUpPage(props) {
-
+    const [userInformation , setUserInformation] = useState({
+        id : "",
+        pw : "",
+        email : "",
+        name : "",
+        date : ""
+    });
     return (
         <div>
             <input placeholder={"아이디"}/>

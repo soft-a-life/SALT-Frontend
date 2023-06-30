@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import NavigationBar from "../navigationBar/NavigationBar";
+import NavigationBar from "../components/NavigationBar";
 import Header from "./Header";
 import BodyLeftComponents from "./components-left/BodyLeftComponents";
 import BodyRightComponents from "./components-right/BodyRightComponents";

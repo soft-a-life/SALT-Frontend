@@ -2,7 +2,7 @@ import './App.css';
 import MainScreen from "./mainScreen/MainScreen";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
-import NavigationBar from "./navigationBar/NavigationBar";
+import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
 import SignUpPage from "./userManagament/signupPage/SingUpPage"
 import {useState} from "react";
