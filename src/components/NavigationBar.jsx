@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./NavigationBar.css"
+import logoImage from '../img/logo.png';
 
 function NavigationBar(userObject) {
 
@@ -14,7 +15,7 @@ function NavigationBar(userObject) {
         <div className={"navigationBar"}>
             <Link to={'/'}>
                 <div className={"logo-container"}>
-                    <img className="logoImage" alt="logo" src="../../public/img/logo.png" />
+                    <img className="logoImage" alt="logo" src={logoImage} />
                 </div>
             </Link>
             <div className="special-menu">
