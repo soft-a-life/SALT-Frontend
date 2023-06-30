@@ -14,7 +14,7 @@ function NavigationBar(userObject) {
         <div className={"navigationBar"}>
             <Link to={'/'}>
                 <div className={"logo-container"}>
-                    로고 자리
+                    <img className="logoImage" alt="logo" src="../../public/img/logo.png" />
                 </div>
             </Link>
             <div className="special-menu">
