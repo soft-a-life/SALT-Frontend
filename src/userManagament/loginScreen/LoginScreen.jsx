@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
+import "./LoginScreen.css"
 
 /*
 *  최초 작성일 : 23.06.23
