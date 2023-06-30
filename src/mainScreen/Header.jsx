@@ -10,7 +10,8 @@ function Header(props) {
             이미지
             <div className={"special-menu"}>
                 {/*메뉴바*/}
-                헤더
+                헤더 
+                앙 기모링
             </div>
         </div>
     );
