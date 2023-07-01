@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
-import SignUpPage from "./userManagament/signupPage/SingupPage"
+import SignUpPage from "./userManagament/signupPage/SignupPage"
 import {useState} from "react";
 
 /*
@@ -14,7 +14,6 @@ import {useState} from "react";
 * */
 function App() {
     const [userObject, setUserObject] = useState({userId:"", isLogin:false});
-
 
     return (
         <div className="App">

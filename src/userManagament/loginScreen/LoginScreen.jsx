@@ -17,7 +17,7 @@ function LoginScreen({loginBtn}) {
     const navigate = useNavigate();
     const [userId, setUserId] = useState("");
     const [userPw, setUserPw] = useState("");
-
+    console.log(loginBtn)
     const changeId = (e) => {
         setUserId(e.target.value)
     }
