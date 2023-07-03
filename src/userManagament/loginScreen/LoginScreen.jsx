@@ -14,9 +14,11 @@ import "./LoginScreen.css"
 *            텍스트 오브젝트 형식으로 가공
 * */
 function LoginScreen({loginBtn}) {
+
     const navigate = useNavigate();
     const [userId, setUserId] = useState("");
     const [userPw, setUserPw] = useState("");
+
     console.log(loginBtn)
     const changeId = (e) => {
         setUserId(e.target.value)

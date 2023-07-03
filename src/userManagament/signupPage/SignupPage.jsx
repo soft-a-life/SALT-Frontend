@@ -20,6 +20,7 @@ function SingUpPage(props) {
     });
 
     const registerBtn = () => {
+
         //제약조건 검사
         setUserInformation({
             user_id : userId,

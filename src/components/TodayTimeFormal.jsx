@@ -10,7 +10,8 @@ function TodayTimeFormal(props) {
     let todayDate = (now.getDate() + 1) > 9 ? (now.getDate() + 1) : '0' + (now.getDate() + 1)
     let hours = (now.getHours() + 1) > 9 ? (now.getHours() + 1) : '0' + (now.getHours() + 1)
     let minutes = (now.getMinutes() + 1) > 9 ? (now.getMinutes() + 1) : '0' + (now.getMinutes() + 1)
-    return todayYear + '/' + todayMonth + '/' + todayDate + '/' + hours + '/' + minutes
+    let seconds = (now.getSeconds() + 1) > 9 ? (now.getSeconds() + 1) : '0' + (now.getSeconds() + 1)
+    return todayYear + '-' + todayMonth + '-' + todayDate + '-' + hours + ':' + minutes + ':' + seconds;
 }
 
 export default TodayTimeFormal;
