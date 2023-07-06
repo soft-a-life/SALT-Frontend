@@ -7,6 +7,7 @@ import TodayTimeFormal from "../../components/TodayTimeFormal";
 *  기능명세 : 회원가입
 * */
 function SingUpPage(props) {
+
     const [userId , setUserId] = useState("");
     const [userPw , setUserPw] = useState("");
     const [userEmail , setUserEmail] = useState("");
@@ -19,6 +20,7 @@ function SingUpPage(props) {
         user_password : userPw,
         user_nickname : userNickName,
         user_registered_day : TodayTimeFormal()});
+
     let userDate = {
         user_id : userId,
         user_name : userName,

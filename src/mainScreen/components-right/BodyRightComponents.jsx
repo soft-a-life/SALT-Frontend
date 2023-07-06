@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./BodyRightComponents.css"
 import PostContent from "./components/PostContent";
+import {Link} from "react-router-dom";
 
 const notification = [{postNum :"000", category : "공지",
     title : "공지공지공지공지공지공지", user : "SAL", date:"2023.01.12", views: 0
@@ -21,7 +22,6 @@ function BodyRightComponents(props) {
     const [isCheck, setIsCheck] = useState(false);
 
     useEffect(()=>{
-
 
         //테스트용 데이터
         const postContent = [
@@ -132,6 +132,9 @@ function BodyRightComponents(props) {
                 {isCheck ? null : notificationContent()}
                 {post()}
             </div>
+            <Link to={"/postWritePage"} >
+                <button>글작성</button>
+            </Link>
         </div>
     );
 }

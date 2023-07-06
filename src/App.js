@@ -6,6 +6,7 @@ import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
 import SignUpPage from "./userManagament/signupPage/SignupPage"
 import {useState} from "react";
+import PostWriteScreen from "./PostWriteScreen/PostWriteScreen";
 
 /*
 *  작성일 : 23.05.03
@@ -27,6 +28,9 @@ function App() {
                 <Routes >
                     <Route path="/" exact element={<MainScreen />}></Route>
                     <Route path="/postViewPage/:user" element={<PostViewScreen/>}></Route>
+                    <Route path="/postWritePage"
+                           element={<PostWriteScreen userObject={userObject}/>}>
+                    </Route>
                     <Route path="/loginPage"
                            exact
                            element={<LoginScreen
@@ -34,6 +38,7 @@ function App() {
                            />}>
                     </Route>
                     <Route path="/loginPage/signUpPage" element={<SignUpPage />}></Route>
+
                 </Routes>
             </BrowserRouter>
         </div>
