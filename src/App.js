@@ -17,8 +17,8 @@ import PostWriteScreen from "./PostWriteScreen/PostWriteScreen";
 *  변경사항 : 로그아웃 함수 추가
 * */
 function App() {
-    const [userObject, setUserObject] = useState({userId:"", isLogin:false});
 
+    const [userObject, setUserObject] = useState({userId:"", isLogin:false});
 
     return (
         <div className="App">
@@ -38,7 +38,6 @@ function App() {
                            />}>
                     </Route>
                     <Route path="/loginPage/signUpPage" element={<SignUpPage />}></Route>
-
                 </Routes>
             </BrowserRouter>
         </div>
