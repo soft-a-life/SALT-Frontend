@@ -35,11 +35,13 @@ function SingUpPage(props) {
         e.target.value = e.target.value.replace(/[^\\!-z]/gi, '');
     }
 
-    const registerBtn = () => {
 
+    // 회원가입 제약 조건
+    const registerBtn = () => {
         let special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
         const defaultNickName = "anonymous"
 
+        // 제약조건 확인
         if(userId.length >= 4 && userId.length <= 30){
             if(special_pattern.test(userPw) === true && userPw.length >= 10){
                 if (userNickName.length === 0){
