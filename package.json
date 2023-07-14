@@ -2,21 +2,47 @@
   "name": "salt_long_project",
   "version": "0.1.0",
   "private": true,
+  "types": "dist/index.d.ts",
   "dependencies": {
+    "@remirror/pm": "^2.0.6",
+    "@remirror/react": "^2.0.32",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "prosemirror": "^0.7.0",
+    "prosemirror-commands": "^1.0.0",
+    "prosemirror-dev-toolkit": "^1.1.2",
+    "prosemirror-dropcursor": "^1.0.0",
+    "prosemirror-example-setup": "^1.2.2",
+    "prosemirror-gapcursor": "^1.0.0",
+    "prosemirror-history": "^1.0.0",
+    "prosemirror-inputrules": "^1.0.0",
+    "prosemirror-keymap": "^1.0.0",
+    "prosemirror-menu": "^1.0.0",
+    "prosemirror-model": "^1.19.2",
+    "prosemirror-schema-basic": "^1.2.2",
+    "prosemirror-schema-list": "^1.0.0",
+    "prosemirror-state": "^1.0.0",
+    "prosemirror-view": "^1.31.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-prosemirror": "^0.2.1",
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
+    "remirror": "^2.0.33",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@prosemirror/buildhelper": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "compilerOptions": {
+    "skipLibCheck": true
   },
   "eslintConfig": {
     "extends": [

@@ -13,69 +13,42 @@ function SingUpPage(props) {
     const [userEmail , setUserEmail] = useState("");
     const [userName , setUserName] = useState("");
     const [userNickName , setNickUserName] = useState("");
-    const [userInformation , setUserInformation] = useState({
-        user_id : userId,
-        user_name : userName,
-        user_email : userEmail,
-        user_password : userPw,
-        user_nickname : userNickName,
-        user_registered_day : TodayTimeFormal()});
-
-    let userDate = {
-        user_id : userId,
-        user_name : userName,
-        user_email : userEmail,
-        user_password : userPw,
-        user_nickname : userNickName,
-        user_registered_day : TodayTimeFormal()};
-
-    console.log(userId)
-
-    function handleOnInput(e)  {
-        e.target.value = e.target.value.replace(/[^\\!-z]/gi, '');
-    }
+    const [userInformation , setUserInformation] = useState({});
 
 
-    // 회원가입 제약 조건
     const registerBtn = () => {
-        let special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+        const special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
         const defaultNickName = "anonymous"
 
         // 제약조건 확인
-        if(userId.length >= 4 && userId.length <= 30){
-            if(special_pattern.test(userPw) === true && userPw.length >= 10){
-                if (userNickName.length === 0){
-                    const userDate = {
-                        user_id : userId,
-                        user_name : userName,
-                        user_email : userEmail,
-                        user_password : userPw,
-                        user_nickname : defaultNickName,
-                        user_registered_day : TodayTimeFormal()}
-
-                    setUserInformation(userInformation => userInformation.value = userDate);
-                    //추출 시에는 valueOf로 처리
-                    console.log(userInformation.valueOf())
-
-                }else {
-                    setUserInformation(userInformation => userInformation.value = userDate);
-                }
-            }else {
-                alert('비밀번호에는 특수 문자 포함 10글자 이상이어야합니다');
-            }
-        }else {
-            alert("아이디는 4글자 이상이거나 30글자 이하만 가능합니다.")
+        if(userId.length < 4 && userId.length > 30){
+            return alert("아이디는 4글자 이상이거나 30글자 이하만 가능합니다.");
         }
+        if(special_pattern.test(userPw) === false && userPw.length < 10){
+            return alert('비밀번호에는 특수 문자 포함 10글자 이상이어야합니다');
+        }
+        if (userNickName.length < 1){
+            return alert('닉네임을 입력해주세요');
+        }
+
+        const userDate = {
+            user_id : userId,
+            user_name : userName,
+            user_email : userEmail,
+            user_password : userPw,
+            user_nickname : defaultNickName,
+            user_registered_day : TodayTimeFormal()};
+        setUserInformation(userDate);
     }
 
     return (
         <div>
             <input value={userId}
-                   onInput={(e) => handleOnInput(e)}
+                   onInput={(e) => {e.target.value.replace(/[^\\!-z]/gi, '')}}
                    onChange={(e) => {setUserId(e.target.value)}}
                    placeholder={"아이디"}/>
             <input value={userPw}
-                   onInput={(e) => handleOnInput(e)}
+                   onInput={(e) => {e.target.value.replace(/[^\\!-z]/gi, '')}}
                    onChange={(e) => {setUserPw(e.target.value)}}
                    placeholder={"비밀번호"}/>
             <input value={userName}
