@@ -34,6 +34,13 @@ function SingUpPage(props) {
             return alert('이름을 입력해주세요');
         }
 
+        const nextForm = {
+            ...form,
+            registerDate: TodayTimeFormal(),
+        }
+        setForm(nextForm);
+
+        console.log(form);
         // fetch post
     }
 
