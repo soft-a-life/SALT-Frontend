@@ -40,7 +40,6 @@ function SingUpPage(props) {
         }
         setForm(nextForm);
 
-        console.log(form);
         // fetch post
     }
 
