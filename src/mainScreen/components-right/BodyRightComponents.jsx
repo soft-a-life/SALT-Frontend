@@ -19,6 +19,7 @@ function BodyRightComponents(props) {
         {postNum :"000", category : "공지", title : "공지공지공지공지공지공지", user : "SAL",
         date:"2023.01.12", views: 0
     }]);
+
     const [isCheck, setIsCheck] = useState(false);
 
     useEffect(()=>{
@@ -63,7 +64,6 @@ function BodyRightComponents(props) {
         }else{
             setIsCheck(false);
         }
-        console.log("isCheck = ", isCheck);
     }
 
     //각 글들의 클릭 이벤트

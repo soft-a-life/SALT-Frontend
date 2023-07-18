@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
-import SignUpPage from "./userManagament/signupPage/SignupPage"
+import SignUpScreen from "./userManagament/signupPage/SignUpScreen"
 import {useState} from "react";
 import PostWriteScreen from "./PostWriteScreen/PostWriteScreen";
 
@@ -39,7 +39,7 @@ function App() {
                                loginBtn={(id) => {setUserObject({userId:id, isLogin: true})}}
                            />}>
                     </Route>
-                    <Route path="/loginPage/signUpPage" element={<SignUpPage />}></Route>
+                    <Route path="/loginPage/signUpPage" element={<SignUpScreen />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
