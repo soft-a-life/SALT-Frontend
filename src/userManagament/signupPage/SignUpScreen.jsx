@@ -41,6 +41,13 @@ function SingUpPage(props) {
         setForm(nextForm);
 
         // fetch post
+        fetch("http://localhost:8080/singup", {
+           method : "POST",
+           headers : {
+               "Content-Type" : "application/json; charset=utf-8"
+           },
+            body: JSON.stringify(form)
+        }).then(res => res)
     }
 
     return (
