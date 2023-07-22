@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
-import ProseMirorr from "./ProseMirorr";
+import ProseMirror from "./ProseMirror";
 
 function PostWriteScreen(props) {
     const {
@@ -19,7 +19,7 @@ function PostWriteScreen(props) {
 
     return (
         <div className={"PostWriteScreen"}>
-            <ProseMirorr />
+            <ProseMirror />
         </div>
     );
 }

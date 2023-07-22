@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import TodayTimeFormal from "../../components/TodayTimeFormal";
+import {useNavigate} from "react-router-dom";
 
 function SingUpPage(props) {
+    const navi = useNavigate();
 
     const [form, setForm] = useState({
         userId : '',
@@ -41,13 +43,22 @@ function SingUpPage(props) {
         setForm(nextForm);
 
         // fetch post
-        fetch("http://localhost:8080/singup", {
+        fetch("http://localhost:8080/accounts/singup", {
            method : "POST",
            headers : {
                "Content-Type" : "application/json; charset=utf-8"
            },
             body: JSON.stringify(form)
-        }).then(res => res)
+        }).then(res => String(res))
+            .then(res => {
+                if(res === "success message"){
+                    alert("회원가입이 정상적으로 완료 되었습니다.")
+                    navi("/login")
+                }
+            })
+            .catch( err =>
+                alert("회원가입에 실패 하였습니다.")
+            )
     }
 
     return (

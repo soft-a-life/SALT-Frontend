@@ -20,7 +20,7 @@ function NavigationBar(props) {
     const init = {userId : '', isLogin : false};
 
     const loggedOut = () => {
-        return <Link to="/loginPage">
+        return <Link to="/loginScreen">
             <button className="login-button">로그인</button>
         </Link>
     }
@@ -29,7 +29,7 @@ function NavigationBar(props) {
         return userObject.isLogin ?
             <button className="LoginOut-button"
             onClick={()  => logOut(init)}>로그아웃</button> :
-            <Link to="/loginPage/signUpPage">
+            <Link to="/loginScreen/signUpScreen">
                 <button className="Register-button">회원가입</button>
             </Link>
     }

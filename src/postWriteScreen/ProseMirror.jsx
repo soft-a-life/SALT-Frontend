@@ -5,7 +5,7 @@ import { schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
 import { exampleSetup } from "prosemirror-example-setup";
 import { useEffect, useRef } from "react";
-import "./ProseMirorr.css"
+import "./ProseMirror.css"
 
 const mySchema = new Schema({
     nodes: addListNodes(schema.spec.nodes, "paragraph block*", "block"),
