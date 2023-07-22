@@ -4,31 +4,47 @@ import "./LoginScreen.css"
 
 function LoginScreen({loginBtn}) {
 
-    const navigate = useNavigate();
-    const [userId, setUserId] = useState("");
-    const [userPw, setUserPw] = useState("");
+    const navi = useNavigate();
+    const [form, setForm] = useState({
+        user_Id : "",
+        user_Pw : ""
+    });
 
-    const changeId = (e) => {
-        setUserId(e.target.value)
-    }
-    const changePw = (e) => {
-        setUserPw(e.target.value)
+    const onChange = (e) => {
+        const nextForm = {
+            ...form,
+            [e.target.name]: e.target.value,
+        }
+        setForm(nextForm);
     }
     const loginConstraints = () => {
-        // 유효성 검사 추가해야 함
-        loginBtn(userId)
-        navigate("/")
+
+        fetch("http://localhost:8080/accounts/login", {
+            method : "GET",
+            headers : {
+                "Content-Type" : "application/json; charset=utf-8"
+            },
+            body: JSON.stringify(form)
+        }).then(res => res.json())
+            .then(res => {
+                if(res.user_Id === form.user_Id){
+                    navi("/")
+                }
+            })
+            .catch( err =>
+                alert("로그인에 실패 하였습니다.")
+            )
     }
 
 
     return (
         <div className={"loginScreen"}>
             <div>
-                <input value={userId}
-                       onChange={(e) => changeId(e)}
+                <input value={form.user_Id}
+                       onChange={(e) => onChange(e)}
                        placeholder={"id"}/>
-                <input value={userPw}
-                       onChange={(e) => changePw(e)}
+                <input value={form.userPw}
+                       onChange={(e) => onChange(e)}
                        placeholder={"pw"}/>
                 <button onClick={() => loginConstraints()}>로그인</button>
             </div>
