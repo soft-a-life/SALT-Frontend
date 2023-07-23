@@ -10,7 +10,7 @@ function PostWriteScreen(props) {
     const navi = useNavigate();
 
     useEffect(() => {
-        if(!userObject.isLogin){
+        if(userObject){
             navi("/")
             alert("로그인 후 가능합니다.");
         }

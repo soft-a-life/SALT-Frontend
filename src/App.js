@@ -5,33 +5,31 @@ import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
 import SignUpScreen from "./userManagament/signupPage/SignUpScreen"
-import {useState} from "react";
 import PostWriteScreen from "./PostWriteScreen/PostWriteScreen";
+import {useCookies} from "react-cookie";
 
 function App() {
 
-    const [userObject, setUserObject] = useState({userId:"", isLogin:false});
-
-
+    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
 
     return (
         <div className="App">
             <BrowserRouter>
-                <NavigationBar userObject={userObject}
-                                logOut={(init) => setUserObject(init)}/>
+                <NavigationBar/>
                 <Routes >
-                    <Route path="/" exact element={<MainScreen />}></Route>
-                    <Route path="/postViewPage/:user" element={<PostViewScreen/>}></Route>
+                    <Route path="/" exact
+                           element={<MainScreen />}></Route>
+                    <Route path="/postViewPage/:user"
+                           element={<PostViewScreen/>}></Route>
                     <Route path="/postWritePage"
-                           element={<PostWriteScreen userObject={userObject}/>}>
+                           element={<PostWriteScreen userObject={cookies.userDate}/>}>
                     </Route>
                     <Route path="/loginScreen"
                            exact
-                           element={<LoginScreen
-                               loginBtn={(id) => {setUserObject({userId:id, isLogin: true})}}
-                           />}>
+                           element={<LoginScreen/>}>
                     </Route>
-                    <Route path="/loginScreen/signUpScreen" element={<SignUpScreen />}></Route>
+                    <Route path="/loginScreen/signUpScreen"
+                           element={<SignUpScreen />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

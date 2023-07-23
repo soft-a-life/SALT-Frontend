@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
+import { useCookies } from "react-cookie"
 import "./LoginScreen.css"
 
-function LoginScreen({loginBtn}) {
+function LoginScreen() {
 
+    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
     const navi = useNavigate();
     const [form, setForm] = useState({
         user_Id : "",
@@ -18,7 +20,6 @@ function LoginScreen({loginBtn}) {
         setForm(nextForm);
     }
     const loginConstraints = () => {
-
         fetch("http://localhost:8080/accounts/login", {
             method : "GET",
             headers : {
@@ -28,6 +29,11 @@ function LoginScreen({loginBtn}) {
         }).then(res => res.json())
             .then(res => {
                 if(res.user_Id === form.user_Id){
+                    setCookie('userDate', {
+                        user_NickName : res.user_NickName,
+                        user_Id : res.user_Id,
+                        user_Pw : res.user_Pw
+                    })
                     navi("/")
                 }
             })
