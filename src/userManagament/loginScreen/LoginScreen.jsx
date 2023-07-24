@@ -43,6 +43,7 @@ function LoginScreen() {
     }
     return (
         <div className={"loginScreen"}>
+            <h2 className="loginTitle">로그인</h2>
             <div className="inputContainer">
                 <input value={form.userId}
                     onChange={(e) => onChange(e)}
@@ -53,10 +54,10 @@ function LoginScreen() {
             </div>
             <div className="buttonContainer">
                 <button onClick={() => loginConstraints()} className="loginButton">로그인</button>
-                <Link to={'/loginPage/signUpPage'}>
+                <Link to={'/signUpPage'}>
                     <button className="signupButton">회원가입</button>
                 </Link>
-                <button className="findIdPwButton">id/pw 찾기</button>
+                <Link to={'/SignUpScreen/signUpPage'} className="findIdPwLink">아이디/비밀번호 찾기</Link>
             </div>
         </div>
     );
