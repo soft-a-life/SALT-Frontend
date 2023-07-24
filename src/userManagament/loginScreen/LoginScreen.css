@@ -1,75 +1,79 @@
 .loginScreen {
-    position: absolute;
-    margin-top: 40px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .loginScreen div {
-    width: 420px;
-    padding: 40px;
-    background: #FFF;
-    box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #7ac142;
-  }
-  
-  .loginScreen input {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0;
-    padding-left: 0;
-    box-shadow: none;
-    transition: all 0.1s ease-out;
-  }
-  
-  .loginScreen input:valid {
-    border-bottom: 1px solid #7ac142;
-  }
-  
-  .loginScreen input:focus:invalid {
-    border-bottom: 1px solid #EF6161;
-  }
-  
-  .loginScreen button {
-    display: inline-block;
-    margin-top: 50px;
-    border: 2px solid #7ac142;
-    background: #7ac142;
-    border-radius: 25px;
-    padding: 3px 12px 5px 12px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0px;
-    transition: all 0.1s ease-out;
-  }
-  
-  .loginScreen button:hover {
-    color: #7ac142;
-    background: #fff;
-    border: 2px solid #7ac142;
-  }
-  
-  .loginScreen .outer-link {
-    display: inline-block;
-    margin-top: 50px;
-    padding: 5px 0;
-    display: block;
-    color: rgba(0, 0, 0, 0.4);
-    transition: all 0.1s ease-out;
-  }
-  
-  .loginScreen .outer-link:hover {
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-  }
-  
+  width: 300px;
+  height: 400px;
+  background: #FFF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.loginScreen .inputContainer {
+  position: absolute;
+  top: 50px;
+  width: 70%;
+}
+
+.loginScreen input {
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.loginScreen input:focus {
+  outline: none;
+  border-bottom: 1px solid #000000;
+}
+
+.loginScreen button {
+  background: #363CD7;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.loginScreen .buttonContainer {
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center; */
+}
+
+.loginScreen button:hover {
+  color: #000000;
+  background: #fff;
+}
+
+.loginScreen input::placeholder {
+  text-align: center;
+}
+
+.loginScreen .loginButton {
+  position: absolute;
+  left: -50px;
+  top: 0px;
+}
+
+.loginScreen .signupButton {
+  position: absolute;
+  left: 10px;
+  top: 150px;
+}
+
+.loginScreen .findIdPwButton {
+  position: absolute;
+  left: -150px;
+  top: -80px;
+}
