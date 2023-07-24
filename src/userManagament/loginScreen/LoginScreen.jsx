@@ -18,7 +18,7 @@ function LoginScreen() {
             [e.target.name]: e.target.value,
         }
         setForm(nextForm);
-    }
+    };
     const loginConstraints = () => {
         fetch("http://localhost:8080/accounts/login", {
             method: "GET",
@@ -40,7 +40,8 @@ function LoginScreen() {
             .catch(err =>
                 alert("로그인에 실패 하였습니다.")
             )
-    }
+    };
+
     return (
         <div className={"loginScreen"}>
             <h2 className="loginTitle">로그인</h2>
@@ -53,11 +54,13 @@ function LoginScreen() {
                     placeholder={"비밀번호를 입력하세요"} />
             </div>
             <div className="buttonContainer">
-                <button onClick={() => loginConstraints()} className="loginButton">로그인</button>
+                <button onClick={() => loginConstraints()}
+                        className="loginButton">로그인</button>
                 <Link to={'/signUpScreen'}>
                     <button className="signupButton">회원가입</button>
                 </Link>
-                <Link to={'/SignUpScreen/signUpPage'} className="findIdPwLink">아이디/비밀번호 찾기</Link>
+                <Link to={'/SignUpScreen/signUpPage'}
+                      className="findIdPwLink">아이디/비밀번호 찾기</Link>
             </div>
         </div>
     );

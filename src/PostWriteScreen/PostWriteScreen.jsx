@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import ProseMirror from "./ProseMirror";
 
 function PostWriteScreen(props) {
+
     const {
         userObject
     } = props;
@@ -14,8 +15,7 @@ function PostWriteScreen(props) {
             navi("/")
             alert("로그인 후 가능합니다.");
         }
-    },[])
-
+    },[]);
 
     return (
         <div className={"PostWriteScreen"}>

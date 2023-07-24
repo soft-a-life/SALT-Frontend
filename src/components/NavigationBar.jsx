@@ -5,16 +5,14 @@ import logoImage from '../img/logo.png';
 import {useCookies} from "react-cookie";
 
 function NavigationBar(props) {
-    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
 
-    console.log("navi cookies",cookies.userDate)
+    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
 
     const loggedOut = () => {
         return <Link to="/loginScreen">
             <button className="login-button">로그인</button>
         </Link>
-    }
-
+    };
     const registerCheck = () => {
         return cookies.userDate ?
             <button className="LoginOut-button"
@@ -22,8 +20,7 @@ function NavigationBar(props) {
             <Link to="/loginScreen/signUpScreen">
                 <button className="Register-button">회원가입</button>
             </Link>
-
-    }
+    };
 
     return (
         <div className={"navigationBar"}>

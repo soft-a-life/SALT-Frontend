@@ -22,12 +22,10 @@ function App() {
                     <Route path="/postViewPage/:user"
                            element={<PostViewScreen/>}></Route>
                     <Route path="/postWritePage"
-                           element={<PostWriteScreen userObject={cookies.userDate}/>}>
-                    </Route>
+                           element={<PostWriteScreen userObject={cookies.userDate}/>}></Route>
                     <Route path="/loginScreen"
                            exact
-                           element={<LoginScreen/>}>
-                    </Route>
+                           element={<LoginScreen/>}></Route>
                     <Route path="/signUpScreen"
                            element={<SignUpScreen />}></Route>
                 </Routes>

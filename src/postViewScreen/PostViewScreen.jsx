@@ -3,9 +3,8 @@ import {useParams} from "react-router-dom";
 import './PostViewScreen.css';
 
 function PostViewScreen(props) {
+
     const {user} = useParams();
-
-
 
     return (
         <div className={'postViewScreen'}>

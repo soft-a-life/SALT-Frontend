@@ -3,8 +3,8 @@ import TodayTimeFormal from "../../components/TodayTimeFormal";
 import {useNavigate} from "react-router-dom";
 
 function SingUpPage(props) {
-    const navi = useNavigate();
 
+    const navi = useNavigate();
     const [form, setForm] = useState({
         userId : '',
         userPw : '',
@@ -20,12 +20,10 @@ function SingUpPage(props) {
             [e.target.name]: e.target.value,
         }
         setForm(nextForm);
-    }
-
+    };
     const registerBtn = () => {
         const special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 
-        // 제약조건 확인
         if(form.userId.length < 4 && form.userId.length > 30){
             return alert("아이디는 4글자 이상이거나 30글자 이하만 가능합니다.");
         }
@@ -59,7 +57,7 @@ function SingUpPage(props) {
             .catch( err =>
                 alert("회원가입에 실패 하였습니다.")
             )
-    }
+    };
 
     return (
         <div>

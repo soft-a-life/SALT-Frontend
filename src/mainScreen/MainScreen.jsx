@@ -8,7 +8,6 @@ import "./MainScreen.css"
 
 function MainScreen(props) {
 
-
     return (
         <div className={"mainScreen"}>
             <Header />

@@ -2,6 +2,7 @@ import React from 'react';
 import "./BodyLeftComponents.css"
 
 function BodyLeftComponents(props) {
+
     return (
         <div className={"bodyLeftComponents"}>
             <div className="menu-item">전체 글 보기</div>
