@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PostViewScreen from "./postViewScreen/PostViewScreen";
 import NavigationBar from "./components/NavigationBar";
 import LoginScreen from "./userManagament/loginScreen/LoginScreen";
-import SignUpScreen from "./userManagament/signupPage/SignUpScreen"
+import SignUpScreen from "./userManagament/signupScreen/SignUpScreen"
 import PostWriteScreen from "./PostWriteScreen/PostWriteScreen";
 import {useCookies} from "react-cookie";
 
@@ -28,7 +28,7 @@ function App() {
                            exact
                            element={<LoginScreen/>}>
                     </Route>
-                    <Route path="/loginScreen/signUpScreen"
+                    <Route path="/signUpScreen"
                            element={<SignUpScreen />}></Route>
                 </Routes>
             </BrowserRouter>

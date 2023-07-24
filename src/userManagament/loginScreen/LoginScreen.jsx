@@ -54,7 +54,7 @@ function LoginScreen() {
             </div>
             <div className="buttonContainer">
                 <button onClick={() => loginConstraints()} className="loginButton">로그인</button>
-                <Link to={'/signUpPage'}>
+                <Link to={'/signUpScreen'}>
                     <button className="signupButton">회원가입</button>
                 </Link>
                 <Link to={'/SignUpScreen/signUpPage'} className="findIdPwLink">아이디/비밀번호 찾기</Link>
