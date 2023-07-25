@@ -4,10 +4,51 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+    border: solid 1px blue;
+}
+.board-notice {
+    border: solid 1px yellow;
+}
+.board-title {
+    width: 70%;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 10px;
+    height: 66px;
+    line-height: 66px;      
+    cursor: pointer;
+    border: solid 1px black;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;  
+    text-align: left;
+}
+.board-line {
+    border-top: solid 1px black;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.board-contents {
+    width: 70%;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 10px;
+    height: 66px;
+    line-height: 66px;      
+    cursor: pointer;
+    border: solid 1px black;
+    outline: none;
+    background: transparent;
+    font-size: 18px;  
+    text-align: left;
 }
 
-.menu-item {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: black;
+.board-list {
+    border: solid 1px yellow;
+    margin-top: 50px;
+}
+.service-center {
+    border: solid 1px yellow;
+    margin-top: 50px;
 }
