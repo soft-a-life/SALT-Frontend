@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie"
 import "./LoginScreen.css"
 
@@ -8,8 +8,8 @@ function LoginScreen() {
     const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
     const navi = useNavigate();
     const [form, setForm] = useState({
-        user_Id : "",
-        user_Pw : ""
+        user_Id: "",
+        user_Pw: ""
     });
 
     const onChange = (e) => {
@@ -28,7 +28,7 @@ function LoginScreen() {
             body: JSON.stringify(form)
         }).then(res => res.json())
             .then(res => {
-                if(res.user_Id === form.user_Id){
+                if (res.user_Id === form.user_Id) {
                     setCookie('userDate', {
                         user_NickName: res.user_NickName,
                         user_Id: res.user_Id,
@@ -55,12 +55,12 @@ function LoginScreen() {
             </div>
             <div className="buttonContainer">
                 <button onClick={() => loginConstraints()}
-                        className="loginButton">로그인</button>
+                    className="loginButton">로그인</button>
                 <Link to={'/signUpScreen'}>
                     <button className="signupButton">회원가입</button>
                 </Link>
                 <Link to={'/SignUpScreen/signUpPage'}
-                      className="findIdPwLink">아이디/비밀번호 찾기</Link>
+                    className="findIdPwLink">아이디/비밀번호 찾기</Link>
             </div>
         </div>
     );
