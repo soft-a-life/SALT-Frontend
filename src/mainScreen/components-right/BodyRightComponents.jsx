@@ -3,23 +3,21 @@ import "./BodyRightComponents.css"
 import PostContent from "./components/PostContent";
 import {Link} from "react-router-dom";
 
+/*
+board-improtant 추가
+이미지 주석 처리
+importantBox 추가
+importantTitle 추가
+importantText 추가
+*/
+
 const notification = [{postNum :"000", category : "공지",
     title : "공지공지공지공지공지공지", user : "SAL", date:"2023.01.12", views: 0
 }];
 
-/*
-*  작성일 : 23.06.29
-*  작성자 : 김영민
-*  기능명세 : 사용자 게시물 공지사항 제공 선택 시
-*           선택된 게시글로 이동한다.
-* */
 function BodyRightComponents(props) {
 
-    const [content, setContent] = useState([
-        {postNum :"000", category : "공지", title : "공지공지공지공지공지공지", user : "SAL",
-        date:"2023.01.12", views: 0
-    }]);
-
+    const [content, setContent] = useState([]);
     const [isCheck, setIsCheck] = useState(false);
 
     useEffect(()=>{
@@ -52,27 +50,10 @@ function BodyRightComponents(props) {
             },
         ];
 
-
         setContent(postContent);
+    }, []);
 
-
-    }, [])
-
-    const changeBool = (e) => {
-        if(e.target.checked) {
-            setIsCheck(true);
-        }else{
-            setIsCheck(false);
-        }
-    }
-
-    //각 글들의 클릭 이벤트
-    const onPostCheck = (contentKey) => {
-        console.log(contentKey," 번 글 클릭");
-    }
-
-
-    const notificationContent = () => {
+    const notificationPost = () => {
            return notification.map((e, index) => {
                     return <PostContent
                         key={index}
@@ -82,12 +63,10 @@ function BodyRightComponents(props) {
                         user={e.user}
                         date={e.date}
                         views={e.views}
-                        onPostCheck={(e) => {onPostCheck(e)}}
                     />
                 }
             )
-    }
-
+    };
     const post = () => {
         return content.map((e, index) => {
                 return <PostContent
@@ -98,24 +77,32 @@ function BodyRightComponents(props) {
                     user={e.user}
                     date={e.date}
                     views={e.views}
-                    onPostCheck={(e) => {
-                        onPostCheck(e)
-                    }}
                 />
 
             }
         )
-    }
+    };
+
     return (
         <div className={"bodyRightComponents"}>
-            <h1>전체 글 보기</h1>
+            <div className={"board-important"}>
+            {/* <img className="robotlogo" alt="robotlogo" src={robotlogo}/> */}
+                <div className="importantBox">
+                    <div className="importantTitle">SALT 게시판 중요사항</div>
+                    <div className="importantText">1. 중요 공지사항</div>
+                    <div className="importantText">2. 게시판 이용 규정</div>
+                    <div className="importantText">3. 광고 및 홍보 금지</div>
+                </div>
+            </div>
+            <h1>전체 게시글</h1>
+            <div className="all-line"></div>
             <div className={"componentHeader"}>
                 <p>{content.length}개의 글</p>
                 <div style={{display:"flex"}}>
                     <input
                         type="checkbox"
                         checked={isCheck}
-                        onChange={(e) => {changeBool(e)}}
+                        onChange={() => {setIsCheck(!isCheck)}}
                     />
                     <p>공지 사항</p>
                 </div>
@@ -129,7 +116,7 @@ function BodyRightComponents(props) {
                         <b className={"views"}>조회</b>
                     </div>
                 </div>
-                {isCheck ? null : notificationContent()}
+                {isCheck ? null : notificationPost()}
                 {post()}
             </div>
             <Link to={"/postWritePage"} >

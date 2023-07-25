@@ -9,10 +9,10 @@ import "./MainScreen.css"
 return문 안에
 mainPhoto 객체 추가
 Header를 mainScreen > mainPhoto로 위치 변경
+Footer mainScreen에서 위치 변경
 */
 
 function MainScreen(props) {
-
 
     return (
         <div className={"mainPhoto"}>
@@ -23,8 +23,8 @@ function MainScreen(props) {
                 <BodyLeftComponents />
                 <BodyRightComponents />
             </div>
-            <Footer />
         </div>
+        <Footer />
         </div>
     );
 }

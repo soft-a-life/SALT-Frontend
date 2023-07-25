@@ -1,42 +1,66 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
+import { useCookies } from "react-cookie"
 import "./LoginScreen.css"
 
-function LoginScreen({loginBtn}) {
+function LoginScreen() {
 
-    const navigate = useNavigate();
-    const [userId, setUserId] = useState("");
-    const [userPw, setUserPw] = useState("");
+    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
+    const navi = useNavigate();
+    const [form, setForm] = useState({
+        user_Id : "",
+        user_Pw : ""
+    });
 
-    const changeId = (e) => {
-        setUserId(e.target.value)
-    }
-    const changePw = (e) => {
-        setUserPw(e.target.value)
-    }
+    const onChange = (e) => {
+        const nextForm = {
+            ...form,
+            [e.target.name]: e.target.value,
+        }
+        setForm(nextForm);
+    };
     const loginConstraints = () => {
-        // 유효성 검사 추가해야 함
-        loginBtn(userId)
-        navigate("/")
-    }
-
+        fetch("http://localhost:8080/accounts/login", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify(form)
+        }).then(res => res.json())
+            .then(res => {
+                if(res.user_Id === form.user_Id){
+                    setCookie('userDate', {
+                        user_NickName: res.user_NickName,
+                        user_Id: res.user_Id,
+                        user_Pw: res.user_Pw
+                    })
+                    navi("/")
+                }
+            })
+            .catch(err =>
+                alert("로그인에 실패 하였습니다.")
+            )
+    };
 
     return (
         <div className={"loginScreen"}>
-            <div>
-                <input value={userId}
-                       onChange={(e) => changeId(e)}
-                       placeholder={"id"}/>
-                <input value={userPw}
-                       onChange={(e) => changePw(e)}
-                       placeholder={"pw"}/>
-                <button onClick={() => loginConstraints()}>로그인</button>
+            <h2 className="loginTitle">로그인</h2>
+            <div className="inputContainer">
+                <input value={form.userId}
+                    onChange={(e) => onChange(e)}
+                    placeholder={"아이디를 입력하세요"} />
+                <input value={form.userPw}
+                    onChange={(e) => onChange(e)}
+                    placeholder={"비밀번호를 입력하세요"} />
             </div>
-            <div style={{marginTop: 10}}>
-                <Link to={'/loginPage/signUpPage'}>
-                    <button>회원가입</button>
+            <div className="buttonContainer">
+                <button onClick={() => loginConstraints()}
+                        className="loginButton">로그인</button>
+                <Link to={'/signUpScreen'}>
+                    <button className="signupButton">회원가입</button>
                 </Link>
-                <button>id/pw 찾기</button>
+                <Link to={'/SignUpScreen/signUpPage'}
+                      className="findIdPwLink">아이디/비밀번호 찾기</Link>
             </div>
         </div>
     );

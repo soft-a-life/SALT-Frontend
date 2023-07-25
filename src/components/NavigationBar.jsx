@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./NavigationBar.css"
 import logoImage from '../img/logo2.png';
+import {useCookies} from "react-cookie";
 
 /* 
 logo2.png 추가 및 logo.png2로 변경
@@ -14,36 +15,24 @@ menu-list 추가
 버튼 구분 위해 menu-button 추가
 */
 
-/*
-*  작성일 : 23.05.03
-*  변경일 : 23.07.03
-*  작성자 : 김영민
-*  변경자 : 김영민
-*  기능명세 : 모든 스크린과 경로, 사용자 데이터 관리
-*  변경사항 : 로그아웃 기능 구현
-* */
-function NavigationBar(props) {
-    const {
-        userObject,
-        logOut
-    } = props;
 
-    const init = {userId : '', isLogin : false};
+function NavigationBar(props) {
+
+    const [cookies, setCookie, removeCookie] = useCookies(['userDate']);
 
     const loggedOut = () => {
-        return <Link to="/loginPage">
+        return <Link to="/loginScreen">
             <button className="login-button">로그인</button>
         </Link>
-    }
-
+    };
     const registerCheck = () => {
-        return userObject.isLogin ?
+        return cookies.userDate ?
             <button className="LoginOut-button"
-            onClick={()  => logOut(init)}>로그아웃</button> :
-            <Link to="/loginPage/signUpPage">
+                     onClick={()  => removeCookie('userDate')}>로그아웃</button> :
+            <Link to="/loginScreen/signUpScreen">
                 <button className="Register-button">회원가입</button>
             </Link>
-    }
+    };
 
     return (
         <div className={"navigationBar"}>
@@ -59,7 +48,10 @@ function NavigationBar(props) {
                 </div>
                 <div className="blankbox">임시 공간용 박스</div>
                 <div className="menu-button">
-                {userObject.isLogin ?  <p>{userObject.userId}</p> : loggedOut()}
+                
+                <button className="menu-item">메뉴1</button>
+                <button className="menu-item">메뉴2</button>
+                {cookies.userDate ? <p>{cookies.userDate.user_Id}</p> : loggedOut()}
                 {registerCheck()}
                 </div>
             </div>

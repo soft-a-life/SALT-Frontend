@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
-import TestProseMirorr from "./TestProseMirorr";
+import ProseMirror from "./ProseMirror";
 
 function PostWriteScreen(props) {
+
     const {
         userObject
     } = props;
@@ -10,16 +11,15 @@ function PostWriteScreen(props) {
     const navi = useNavigate();
 
     useEffect(() => {
-        if(!userObject.isLogin){
+        if(userObject){
             navi("/")
             alert("로그인 후 가능합니다.");
         }
-    },[])
-
+    },[]);
 
     return (
         <div className={"PostWriteScreen"}>
-            <TestProseMirorr />
+            <ProseMirror />
         </div>
     );
 }

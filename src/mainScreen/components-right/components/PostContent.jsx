@@ -11,13 +11,13 @@ function PostContent(props) {
         title,
         user,
         date,
-        views,
-        onPostCheck
+        views
     } = props;
 
     return (
         <Link to={`/postViewPage/${contentKey}`}>
-            <div className={"postContent"} key={index} onClick={() => onPostCheck(contentKey)}>
+            <div className={"postContent"}
+                 key={index}>
                     <div className={"lPost"}>
                         <p>{category}</p>
                         <p>{title}</p>
