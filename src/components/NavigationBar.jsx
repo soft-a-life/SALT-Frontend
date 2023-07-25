@@ -38,7 +38,7 @@ function NavigationBar(props) {
         <div className={"navigationBar"}>
             <Link to={'/'}>
                 <div className={"logo-container"}>
-                    <img className="logoImage" alt="logo" src={logoImage} height="66px"/>
+                    <img className="logoImage" alt="logo" src={logoImage} height="60px"/>
                 </div>
             </Link>
             <div className="special-menu">
@@ -46,7 +46,7 @@ function NavigationBar(props) {
                 <button className="menu-item">SAL</button>
                 <button className="menu-item">개발자들</button>
                 </div>
-                <div className="blankbox">임시 공간용 박스</div>
+                <div className="blankbox"></div>
                 <div className="menu-button">
                 
                 <button className="menu-item">메뉴1</button>

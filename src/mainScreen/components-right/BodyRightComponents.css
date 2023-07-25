@@ -5,11 +5,11 @@
     background: none;
     float: left;
     padding-top: 20px;
-    border: solid 1px green;
+    border: solid 0px green;
 }
 .board-important {
-    border: solid 1px  brown;
-    height: 300px;
+    border: solid 0px brown;
+    height: 260px;
 }
 .importantBox {
     width: 64%;
@@ -17,7 +17,7 @@
     float: right;
     background-color: #EDF4F6;
     margin-right: 50px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .importantTitle {
     padding-left: 20px;

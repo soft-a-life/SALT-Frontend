@@ -7,6 +7,7 @@ board-contents로 수정
 이미지 경로 오류 떠서 주석처리
 board-title 추가
 board-line 추가
+board-profile 추가
 board-list 추가
 service-center 추가
 */
@@ -18,7 +19,7 @@ function BodyLeftComponents(props) {
             <div className={"board-notice"}>
                 <div className="board-title">게시판 정보</div>
                 <div className="board-line"></div>
-                <div className="board-contents">
+                <div className="board-profile">
                 {/* <img className="profileImage" alt="profile" src={profileImage}/> */}
                     소웨</div>
                     <div className="board-line"></div>
