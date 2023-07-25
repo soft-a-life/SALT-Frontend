@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./NavigationBar.css"
-import logoImage from '../img/logo.png';
+import logoImage from '../img/logo2.png';
+
+/* 
+logo2.png 추가 및 logo.png2로 변경
+logoImage height값 추가
+*/
+
+/*
+menu-list 추가
+위치 변경이 안되서 사이에 blankbox 임시 추가
+버튼 구분 위해 menu-button 추가
+*/
 
 /*
 *  작성일 : 23.05.03
@@ -38,14 +49,19 @@ function NavigationBar(props) {
         <div className={"navigationBar"}>
             <Link to={'/'}>
                 <div className={"logo-container"}>
-                    <img className="logoImage" alt="logo" src={logoImage} />
+                    <img className="logoImage" alt="logo" src={logoImage} height="66px"/>
                 </div>
             </Link>
             <div className="special-menu">
-                <button className="menu-item">메뉴1</button>
-                <button className="menu-item">메뉴2</button>
+                <div className="menu-list">
+                <button className="menu-item">SAL</button>
+                <button className="menu-item">개발자들</button>
+                </div>
+                <div className="blankbox">임시 공간용 박스</div>
+                <div className="menu-button">
                 {userObject.isLogin ?  <p>{userObject.userId}</p> : loggedOut()}
                 {registerCheck()}
+                </div>
             </div>
         </div>
     );
