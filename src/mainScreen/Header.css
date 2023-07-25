@@ -7,9 +7,12 @@
     background-color: black;
     border: solid 2px pink; 
 }
-
-.main-container {
+.mainImage {
     filter: brightness(50%); 
+}
+.main-container {
+    width: 100%;
+    
 }
 
 .title-main {

@@ -2,9 +2,45 @@
     width: 70%;
     height: 100%;
     display: block;
-    background: blanchedalmond;
+    background: none;
     float: left;
     padding-top: 20px;
+    border: solid 1px green;
+}
+.board-important {
+    border: solid 1px  brown;
+    height: 300px;
+}
+.importantBox {
+    width: 64%;
+    height: 200px;
+    float: right;
+    background-color: #EDF4F6;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.importantTitle {
+    padding-left: 20px;
+    padding-top: 30px;
+    text-align: left;
+    font-weight: bold;
+}
+.importantText {
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+h1 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.all-line {
+    border-top: solid 2px black;
+    margin-bottom: 10px;
+    width: 100%;
+    
 }
 .componentHeader{
     width: 100%;
@@ -19,7 +55,9 @@
     width: 100%;
     display: flex;
     float: left;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
 }
 .rightPostHeader{
     display: flex;
