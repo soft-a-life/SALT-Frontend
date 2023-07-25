@@ -1,7 +1,6 @@
 import React from 'react';
 import "./BodyLeftComponents.css"
 
-
 /*
 NavigationBar.jsx의 menu-item과 겹침
 board-contents로 수정
@@ -20,7 +19,7 @@ function BodyLeftComponents(props) {
                 <div className="board-title">게시판 정보</div>
                 <div className="board-line"></div>
                 <div className="board-contents">
-                {/* <img className="profileImage" alt="profile" src={profileImage}/> 이미지 경로 오류*/}
+                {/* <img className="profileImage" alt="profile" src={profileImage}/> */}
                     소웨</div>
                     <div className="board-line"></div>
                 <div className="board-contents">내 게시글 즐겨찾기 : 312</div>
