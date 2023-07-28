@@ -4,10 +4,66 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+    border: solid 0px blue;
+}
+.board-notice {
+    border: solid 0px yellow;
+}
+.board-title {
+    width: 70%;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;      
+    cursor: pointer;
+    border: solid 0px black;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;  
+    text-align: left;
+}
+.board-line {
+    border-top: solid 1px black;
+    margin-bottom: 10px;
+    width: 80%;
+}
+.board-profile {
+    width: 70%;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 10px;
+    height: 100px;
+    line-height: 100px;      
+    cursor: pointer;
+    border: solid 0px black;
+    outline: none;
+    background: transparent;
+    font-size: 18px;  
+    text-align: left;
+    font-weight: bold;
+}
+.board-contents {
+    width: 70%;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;      
+    cursor: pointer;
+    border: solid 0px black;
+    outline: none;
+    background: transparent;
+    font-size: 18px;  
+    text-align: left;
 }
 
-.menu-item {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: black;
+.board-list {
+    border: solid 0px yellow;
+    margin-top: 50px;
+}
+.service-center {
+    border: solid 0px yellow;
+    margin-top: 50px;
 }

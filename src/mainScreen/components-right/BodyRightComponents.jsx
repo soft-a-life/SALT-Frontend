@@ -3,6 +3,14 @@ import "./BodyRightComponents.css"
 import PostContent from "./components/PostContent";
 import {Link} from "react-router-dom";
 
+/*
+board-improtant 추가
+이미지 주석 처리
+importantBox 추가
+importantTitle 추가
+importantText 추가
+*/
+
 const notification = [{postNum :"000", category : "공지",
     title : "공지공지공지공지공지공지", user : "SAL", date:"2023.01.12", views: 0
 }];
@@ -77,7 +85,17 @@ function BodyRightComponents(props) {
 
     return (
         <div className={"bodyRightComponents"}>
-            <h1>전체 글 보기</h1>
+            <div className={"board-important"}>
+            {/* <img className="robotlogo" alt="robotlogo" src={robotlogo}/> */}
+                <div className="importantBox">
+                    <div className="importantTitle">SALT 게시판 중요사항</div>
+                    <div className="importantText">1. 중요 공지사항</div>
+                    <div className="importantText">2. 게시판 이용 규정</div>
+                    <div className="importantText">3. 광고 및 홍보 금지</div>
+                </div>
+            </div>
+            <h1>전체 게시글</h1>
+            <div className="all-line"></div>
             <div className={"componentHeader"}>
                 <p>{content.length}개의 글</p>
                 <div style={{display:"flex"}}>

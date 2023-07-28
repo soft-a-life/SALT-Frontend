@@ -1,14 +1,31 @@
 .header {
-    width: 100%;
-    height: 200px;
+    width: 100%;    
+    height: 100%;   
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+    border: solid 0px pink; 
+}
+.mainImage {
+    filter: brightness(50%); 
+}
+.main-container {
+    width: 100%;
+    
 }
 
-.title {
+.title-main {
     color: white;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 40px;
+    border: solid 0px orange;
+    position: absolute;     
+    top: 47%;       
+    left: 15%;      
+}
+
+.mainPhototext {
+    padding: 20px 0px;
+    text-align: left; 
 }
