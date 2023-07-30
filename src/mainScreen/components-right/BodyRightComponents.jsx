@@ -24,7 +24,7 @@ function BodyRightComponents(props) {
 
         //테스트용 데이터
         const postContent = [
-            {postNum :"001", category : "java", title : "자바 기초 상속 강좌 영상 파트1", user : "kym",
+            {postNum :"001", category : "java", title : "자바 기초 상속 강좌 파트1", user : "kym",
              date:"2023.01.12", views: 231
             },
             {postNum :"002", category : "java", title : "자바 기초 상속 강좌 영상 파트2", user : "kym",
