@@ -20,6 +20,8 @@ npm install react-router-dom `페이지 이동에 사용하는 라우터`
 
 npm install eslint --save-dev `lint`
 
+npx eslint --init `lint`
+
 
 ## 설치 및 실행
 
