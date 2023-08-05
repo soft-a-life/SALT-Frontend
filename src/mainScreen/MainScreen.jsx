@@ -6,9 +6,7 @@ import Footer from './Footer'
 import './MainScreen.css'
 
 /*
-mainPhoto fix
-
-위치 변경
+mainPhoto fix Dockerfile pull node위치 변경
 */
 
 function MainScreen(props) {
