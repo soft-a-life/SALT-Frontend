@@ -8,7 +8,7 @@ import LoginScreen from './userManagament/loginScreen/LoginScreen'
 import SignUpScreen from './userManagament/signupScreen/SignUpScreen'
 import PostWriteScreen from './PostWriteScreen/PostWriteScreen'
 import { useCookies } from 'react-cookie'
-import SearchIdPwScreen from './userManagament/searchIdPwScreen/SearchIdPwScreen'
+import SearchIdScreen from './userManagament/searchIdPwScreen/SearchIdScreen'
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['userDate'])
@@ -29,10 +29,7 @@ function App() {
           ></Route>
           <Route path="/loginScreen" exact element={<LoginScreen />}></Route>
           <Route path="/signUpScreen" element={<SignUpScreen />}></Route>
-          <Route
-            path="/searchIdPwScreen"
-            element={<SearchIdPwScreen />}
-          ></Route>
+          <Route path="/searchIdScreen" element={<SearchIdScreen />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
