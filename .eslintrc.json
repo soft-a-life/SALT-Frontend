@@ -4,8 +4,7 @@
         "es2021": true
     },
     "extends": [
-        "plugin:prettier/recommended",
-        "plugin:react/recommended"
+        "react-app", "prettier"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -15,10 +14,10 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "prettier"
     ],
     "rules": {
-      "prettier/prettier": ["error", { "singleQuote": true, "semi": false }],
+      "prettier/prettier": ["error", { "endOfLine": "auto" }],
       "space-before-function-paren": ["error", "never"]
     }
 }
