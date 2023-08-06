@@ -40,10 +40,7 @@ function NavigationBar(props) {
           <button className="menu-item">SAL</button>
           <button className="menu-item">개발자들</button>
         </div>
-        <div className="blankbox"></div>
-        <div className="menu-button">
-          <button className="menu-item">메뉴1</button>
-          <button className="menu-item">메뉴2</button>
+        <div className="menu-option">
           {cookies.userDate ? <p>{cookies.userDate.user_Id}</p> : loggedOut()}
           {registerCheck()}
         </div>
