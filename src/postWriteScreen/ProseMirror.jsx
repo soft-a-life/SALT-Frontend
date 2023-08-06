@@ -26,7 +26,7 @@ export function Editor() {
       state: EditorState.create({ doc, plugins }),
     })
   }, [])
-
+  // eslint-disable-next-line react/react-in-jsx-scope
   return <div id="editor" ref={editorDom} />
 }
 
