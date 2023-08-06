@@ -27,8 +27,7 @@ export function Editor() {
     })
   }, [])
 
-  // eslint-disable-next-line react/react-in-jsx-scope
-  return <div id="editor" ref={editorDom}></div>
+  return <div id="editor" ref={editorDom} />
 }
 
 export default Editor
