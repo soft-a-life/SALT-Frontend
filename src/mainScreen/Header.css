@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: none;
     border: solid 0px pink; 
 }
 .mainImage {
@@ -12,7 +12,7 @@
 }
 .main-container {
     width: 100%;
-    
+    border: solid 0px red;
 }
 
 .title-main {
@@ -24,8 +24,16 @@
     top: 47%;       
     left: 15%;      
 }
-
 .mainPhototext {
     padding: 20px 0px;
     text-align: left; 
 }
+.hideImg {
+    display: flex;
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 86%;
+    left: 94%;
+} 
