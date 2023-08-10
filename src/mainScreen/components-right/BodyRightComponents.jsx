@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './BodyRightComponents.css'
 import PostContent from './components/PostContent'
 import { Link } from 'react-router-dom'
+import robotlogo from '../../img/sal_logo.png'
 
 const notification = [
   {
@@ -124,7 +125,7 @@ function BodyRightComponents(props) {
   return (
     <div className={'bodyRightComponents'}>
       <div className={'board-important'}>
-        {/* <img className="robotlogo" alt="robotlogo" src={robotlogo}/> */}
+        <img className="robotlogo" alt="robotlogo" src={robotlogo} />
         <div className="importantBox">
           <div className="importantTitle">SALT 게시판 중요사항</div>
           <div className="importantText">1. 중요 공지사항</div>

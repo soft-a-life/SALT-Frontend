@@ -11,6 +11,11 @@
     border: solid 0px brown;
     height: 260px;
 }
+.robotlogo {
+    width: 30%;
+    height: 80%;
+    border: solid 0px;
+}
 .importantBox {
     width: 64%;
     height: 200px;
