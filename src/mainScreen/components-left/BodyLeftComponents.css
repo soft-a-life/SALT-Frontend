@@ -34,8 +34,8 @@
     margin-bottom: 10px;
     color: black;
     margin-left: 10px;
-    height: 100px;
-    line-height: 100px;      
+    height: 80px;
+    line-height: 80px;      
     cursor: pointer;
     border: solid 0px black;
     outline: none;
@@ -43,6 +43,15 @@
     font-size: 18px;  
     text-align: left;
     font-weight: bold;
+    display: flex;
+}
+.profileImage {
+    width: 30%;
+    height: 100%;
+}
+.profileName {
+    margin-left: 20px;
+    font-size: 20px;
 }
 .board-contents {
     width: 70%;

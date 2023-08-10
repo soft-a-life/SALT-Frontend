@@ -1,16 +1,6 @@
 import React from 'react'
 import './BodyLeftComponents.css'
-
-/*
-NavigationBar.jsx의 menu-item과 겹침
-board-contents로 수정
-이미지 경로 오류 떠서 주석처리
-board-title 추가
-board-line 추가
-board-profile 추가
-board-list 추가
-service-center 추가
-*/
+import profileImage from '../../img/profile.png'
 
 function BodyLeftComponents(props) {
   return (
@@ -19,8 +9,8 @@ function BodyLeftComponents(props) {
         <div className="board-title">게시판 정보</div>
         <div className="board-line"></div>
         <div className="board-profile">
-          {/* <img className="profileImage" alt="profile" src={profileImage}/> */}
-          소웨
+          <img className="profileImage" alt="profile" src={profileImage} />
+          <div className="profileName">소웨</div>
         </div>
         <div className="board-line"></div>
         <div className="board-contents">내 게시글 즐겨찾기 : 312</div>
