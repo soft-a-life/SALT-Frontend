@@ -27,13 +27,16 @@
 .importantTitle {
     padding-left: 20px;
     padding-top: 30px;
+    padding-bottom: 10px;
     text-align: left;
     font-weight: bold;
+    font-size: 20px;
 }
 .importantText {
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 18px;
     text-align: left;
+    font-weight: bold;
 }
 h1 {
     text-align: left;
@@ -56,10 +59,12 @@ h1 {
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(105, 105, 105);
     font-size: 18px;
+    color: rgb(85, 85, 85);
 }
 .componentText {
     margin-left: 20px;
     font-weight: bold;
+    color: black;
 }
 .postHeader{
     width: 100%;
@@ -81,3 +86,15 @@ h1 {
     width: 68%;
     text-align: left;
 }
+.postNumber {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+.writeButton {
+    margin-top: 16px;
+    float: right;
+    font-size: 16px;
+}
+

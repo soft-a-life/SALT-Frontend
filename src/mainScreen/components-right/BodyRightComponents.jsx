@@ -160,8 +160,13 @@ function BodyRightComponents(props) {
         {isCheck ? null : notificationPost()}
         {post()}
       </div>
+      <div className="postNumber">1</div>
+      <div className="postNumber">2</div>
+      <div className="postNumber">3</div>
+      <div className="postNumber">4</div>
+      <div className="postNumber">5</div>
       <Link to={'/postWritePage'}>
-        <button>글작성</button>
+        <button className="writeButton">글 작성</button>
       </Link>
     </div>
   )
