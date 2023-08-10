@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 // eslint-disable-next-line react/prop-types
-function Timer({ min, secon }) {
+function Timer({ timeOut }) {
   const [minutes, setMinutes] = useState(5)
   const [seconds, setSeconds] = useState(0)
   useEffect(() => {
@@ -16,6 +16,9 @@ function Timer({ min, secon }) {
           setMinutes(minutes - 1)
           setSeconds(59)
         }
+      }
+      if (minutes === 0 && seconds === 0) {
+        timeOut()
       }
     }, 1000)
     return () => clearInterval(countdown)
