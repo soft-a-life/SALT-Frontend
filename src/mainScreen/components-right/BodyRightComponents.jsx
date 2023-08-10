@@ -136,7 +136,7 @@ function BodyRightComponents(props) {
       <h1>전체 게시글</h1>
       <div className="all-line"></div>
       <div className={'componentHeader'}>
-        <p>{content.length}개의 글</p>
+        <p className="componentText">{content.length}개의 글</p>
         <div style={{ display: 'flex' }}>
           <input
             type="checkbox"
