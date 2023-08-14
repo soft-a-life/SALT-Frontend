@@ -159,7 +159,7 @@ function BodyRightComponents(props) {
         {isCheck ? null : notificationPost()}
         {post()}
       </div>
-      <Link to={'/postWritePage'}>
+      <Link to={'/postWriteScreen'}>
         <button>글작성</button>
       </Link>
     </div>

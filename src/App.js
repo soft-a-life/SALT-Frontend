@@ -20,11 +20,11 @@ function App() {
         <Routes>
           <Route path="/" exact element={<MainScreen />}></Route>
           <Route
-            path="/postViewPage/:user"
+            path="/postViewScreen/:user"
             element={<PostViewScreen />}
           ></Route>
           <Route
-            path="/postWritePage"
+            path="/postWriteScreen"
             element={<PostWriteScreen userObject={cookies} />}
           ></Route>
           <Route path="/loginScreen" exact element={<LoginScreen />}></Route>

@@ -27,7 +27,12 @@ export function Editor() {
     })
   }, [])
 
-  return <div id="editor" ref={editorDom} />
+  return (
+    <div>
+      <div id="editor" ref={editorDom} />
+      <button>이미지 삽입</button>
+    </div>
+  )
 }
 
 export default Editor

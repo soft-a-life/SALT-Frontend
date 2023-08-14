@@ -7,7 +7,7 @@ function PostContent(props) {
   const { index, contentKey, category, title, user, date, views } = props
 
   return (
-    <Link to={`/postViewPage/${contentKey}`}>
+    <Link to={`/postViewScreen/${contentKey}`}>
       <div className={'postContent'} key={index}>
         <div className={'lPost'}>
           <p>{category}</p>
