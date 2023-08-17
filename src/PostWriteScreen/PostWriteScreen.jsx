@@ -1,19 +1,16 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProseMirror from './ProseMirror'
+import LoginAuthorization from '../components/utilts/LoginAuthorization'
 
 function PostWriteScreen(props) {
-  // eslint-disable-next-line react/prop-types
-  const { userObject } = props
-
   const navi = useNavigate()
 
   useEffect(() => {
-    if (!userObject) {
-      return
+    if (!LoginAuthorization) {
+      navi('/')
+      alert('로그인 후 가능합니다.')
     }
-    navi('/')
-    alert('로그인 후 가능합니다.')
   }, [])
 
   return (

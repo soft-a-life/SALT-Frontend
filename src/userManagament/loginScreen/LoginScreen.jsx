@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie'
 import './LoginScreen.css'
 
 function LoginScreen() {
-  const [cookies, setCookie, removeCookie] = useCookies(['userDate'])
+  const [cookies, setCookie, removeCookie] = useCookies(['loginToken'])
   const navi = useNavigate()
   const [form, setForm] = useState({
     user_Id: '',
@@ -28,12 +28,8 @@ function LoginScreen() {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.user_Id === form.user_Id) {
-          setCookie('userDate', {
-            user_NickName: res.user_NickName,
-            user_Id: res.user_Id,
-            user_Pw: res.user_Pw,
-          })
+        if (res.ACCESS_TOKEN) {
+          setCookie('loginToken', res.ACCESS_TOKEN)
           navi('/')
         }
       })

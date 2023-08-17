@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TodayTimeFormal from '../../components/TodayTimeFormal'
+import TodayTimeFormal from '../../components/utilts/TodayTimeFormal'
 import { useNavigate } from 'react-router-dom'
 
 function SingUpPage(props) {
