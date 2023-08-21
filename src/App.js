@@ -20,10 +20,7 @@ function App() {
             path="/postViewPage/:user"
             element={<PostViewScreen />}
           ></Route>
-          <Route
-            path="/postWritePage"
-            element={<PostWriteScreen/>}
-          ></Route>
+          <Route path="/postWritePage" element={<PostWriteScreen />}></Route>
           <Route path="/loginScreen" element={<LoginScreen />}></Route>
           <Route path="/signUpScreen" element={<SignUpScreen />}></Route>
           <Route path="/searchIdScreen" element={<SearchIdScreen />}></Route>
