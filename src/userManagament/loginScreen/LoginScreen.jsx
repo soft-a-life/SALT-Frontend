@@ -28,8 +28,11 @@ function LoginScreen() {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.ACCESS_TOKEN) {
-          setCookie('loginToken', res.ACCESS_TOKEN)
+        if (res.ACCESS_TOKEN && res.REFRESH_TOKEN) {
+          setCookie('accessToken', res.ACCESS_TOKEN, {
+            httpOnly: true,
+          })
+          setCookie('refreshToken', res.REFRESH_TOKEN)
           navi('/')
         }
       })

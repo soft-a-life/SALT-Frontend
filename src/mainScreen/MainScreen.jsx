@@ -5,10 +5,6 @@ import BodyRightComponents from './components-right/BodyRightComponents'
 import Footer from './Footer'
 import './MainScreen.css'
 
-/*
-mainPhoto fix Dockerfile pull node위치 변경
-*/
-
 function MainScreen(props) {
   return (
     <div>
