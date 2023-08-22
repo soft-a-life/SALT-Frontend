@@ -20,7 +20,7 @@ function LoginScreen() {
   }
   const loginConstraints = () => {
     fetch('http://localhost:8080/accounts/login', {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
@@ -62,7 +62,7 @@ function LoginScreen() {
         <Link to={'/signUpScreen'}>
           <button className="signupButton">회원가입</button>
         </Link>
-        <Link to={'/searchIdPwScreen'} className="findIdPwLink">
+        <Link to={'/searchIdScreen'} className="findIdPwLink">
           아이디/비밀번호 찾기
         </Link>
       </div>

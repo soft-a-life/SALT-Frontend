@@ -1,116 +1,109 @@
 import React, { useState } from 'react'
-import TodayTimeFormal from '../../components/TodayTimeFormal'
-import { useNavigate } from 'react-router-dom'
+import './SignUpScreen.css'
 
-function SingUpPage(props) {
-  const navi = useNavigate()
-  const [form, setForm] = useState({
-    userId: '',
-    userPw: '',
-    userName: '',
-    userEmail: '',
-    userNickName: '',
-    registerDate: TodayTimeFormal(),
+const SignUpScreen = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    name: '',
+    nickname: '',
+    email: '',
   })
 
-  const onChange = (e) => {
-    const nextForm = {
-      ...form,
-      [e.target.name]: e.target.value,
-    }
-    setForm(nextForm)
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
   }
-  const registerBtn = () => {
-    const special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi
 
-    if (form.userId.length < 4 && form.userId.length > 30) {
-      return alert('아이디는 4글자 이상이거나 30글자 이하만 가능합니다.')
-    }
-    if (
-      special_pattern.test(form.userPw) === false &&
-      form.userPw.length < 10
-    ) {
-      return alert('비밀번호에는 특수 문자 포함 10글자 이상이어야합니다')
-    }
-    if (form.userName.length < 1) {
-      return alert('이름을 입력해주세요')
-    }
-
-    const nextForm = {
-      ...form,
-      registerDate: TodayTimeFormal(),
-    }
-    setForm(nextForm)
-
-    // fetch post
-    fetch('http://localhost:8080/accounts/singup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-      body: JSON.stringify(form),
-    })
-      .then((res) => String(res))
-      .then((res) => {
-        if (res === 'success message') {
-          alert('회원가입이 정상적으로 완료 되었습니다.')
-          navi('/login')
-        }
-      })
-      .catch((err) => alert('회원가입에 실패 하였습니다.'))
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // 여기서 폼 데이터를 서버로 전송하는 로직을 작성합니다.
+    console.log(formData)
   }
 
   return (
-    <div>
-      <input
-        value={form.userId}
-        name={'userId'}
-        onInput={(e) => {
-          e.target.value.replace(/[^\\!-z]/gi, '')
-        }}
-        onChange={(e) => {
-          onChange(e)
-        }}
-        placeholder={'아이디'}
-      />
-      <input
-        value={form.userPw}
-        name={'userPw'}
-        onInput={(e) => {
-          e.target.value.replace(/[^\\!-z]/gi, '')
-        }}
-        onChange={(e) => {
-          onChange(e)
-        }}
-        placeholder={'비밀번호'}
-      />
-      <input
-        value={form.userName}
-        name={'userName'}
-        onChange={(e) => {
-          onChange(e)
-        }}
-        placeholder={'이름'}
-      />
-      <input
-        value={form.userNickName}
-        name={'userNickName'}
-        onChange={(e) => {
-          onChange(e)
-        }}
-        placeholder={'닉네임'}
-      />
-      <input
-        value={form.userEmail}
-        name={'userEmail'}
-        onChange={(e) => {
-          onChange(e)
-        }}
-        placeholder={'이메일'}
-      />
-      <button onClick={() => registerBtn()}>회원가입</button>
+    <div className="sign-up-form-container">
+      <form className="sign-up-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label className="label" htmlFor="username">
+            아이디
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="아이디를 입력하세요."
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label" htmlFor="password">
+            비밀번호
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="비밀번호를 입력하세요."
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label" htmlFor="name">
+            이름
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="이름을 입력하세요."
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label" htmlFor="nickname">
+            닉네임
+          </label>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            placeholder="닉네임을 입력하세요."
+            value={formData.nickname}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label" htmlFor="email">
+            이메일
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력하세요."
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'right' }}>
+          <button type="submit">회원가입</button>
+        </div>
+      </form>
     </div>
   )
 }
 
-export default SingUpPage
+export default SignUpScreen

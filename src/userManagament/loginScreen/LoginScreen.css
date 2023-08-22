@@ -1,7 +1,7 @@
 .loginScreen {
-  width: 300px;
-  height: 400px;
-  background: #FFF;
+  width: 450px;
+  height: 500px;
+  background: #fffdfd;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,46 +10,64 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  border: 0.05px solid rgb(222, 218, 218);
+  border-radius: 7px;
   padding: 50px;
+  box-shadow: 0 5px 18px -7px rgba(147, 146, 146, 0.175);
 }
 
-.loginScreen .loginTitle {
+.logo {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.LoginScreenBackground {
+  background-color: #dfdfdf3b;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*.loginScreen .loginTitle {   
   position: absolute;
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
   font-weight: bold;
-}
+}*/
 
 .loginScreen .inputContainer {
   position: absolute;
-  top: 50px;
+  top: 130px;
   width: 60%;
 }
 
 .loginScreen input {
   display: block;
   width: 100%;
-  margin-top: 60px;
-  border: none;
-  border-bottom: 1px solid #000000;
+  height: 40px;
+  margin-top: 30px;
+  border: 0.3px solid #3c3c3c;
+  border-radius: 3px;
 }
 
 .loginScreen input:focus {
   outline: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 0.3px solid #000000;
 }
 
 .loginScreen button {
   background: #363CD7;
-  padding: 10px 50px;
+  padding: 10px 80px;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
+  border: none;
+  border-radius: 5px;
 }
 
 .loginScreen .buttonContainer {
@@ -59,32 +77,35 @@
 .loginScreen button:hover {
   color: #000000;
   background: #fff;
+  border: 2px solid #000;
 }
 
 .loginScreen input::placeholder {
-  text-align: center;
+  text-align: left;
 }
 
 .loginScreen .loginButton {
   position: absolute;
+  width: 350px;
   left: 50%;
-  top: 30px;
+  top: 70px;
   transform: translateX(-50%);
 }
 
 .loginScreen .signupButton {
   position: absolute;
+  width: 350px;
   left: 50%;
-  top: 170px;
+  top: 130px;
   transform: translateX(-50%);
 }
 
-.loginScreen .findIdPwLink {
+.loginScreen .findIdPwLink {     /*아이디/비밀번호 찾기*/
   position: absolute;
-  left: -100px;
-  top: 110px;
+  left: 0px;
+  top: 220px;
   transform: translateX(-50%);
-  color: #000000;
+  color: #352a2a;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
