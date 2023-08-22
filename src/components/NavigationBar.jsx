@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './NavigationBar.css'
 import logoImage from '../img/logo2.png'
 import { useCookies } from 'react-cookie'
 
 function NavigationBar(props) {
-  const [cookies, setCookie, removeCookie] = useCookies(['userDate'])
+  const [cookies, setCookie, removeCookie] = useCookies(['loginToken'])
 
   const loggedOut = () => {
     return (
@@ -15,10 +15,10 @@ function NavigationBar(props) {
     )
   }
   const registerCheck = () => {
-    return cookies.userDate ? (
+    return cookies.loginToken ? (
       <button
         className="LoginOut-button"
-        onClick={() => removeCookie('userDate')}
+        onClick={() => removeCookie('loginToken')}
       >
         로그아웃
       </button>
@@ -47,7 +47,7 @@ function NavigationBar(props) {
             <button className="menu-item">개발자들</button>
           </div>
           <div className="menu-option">
-            {cookies.userDate ? <p>{cookies.userDate.user_Id}</p> : loggedOut()}
+            {cookies.loginToken ? <p>{cookies.userDate.user_Id}</p> : loggedOut()}
             {registerCheck()}
           </div>
         </div>

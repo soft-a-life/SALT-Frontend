@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Timer from '../../components/Timer'
+import Timer from '../../components/utilts/Timer'
 import IdPasswordFoundView from './IdPasswordFoundView'
 import './SearchIdScreen.css'
 

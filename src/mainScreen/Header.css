@@ -14,6 +14,28 @@
     width: 100%;
     border: solid 0px red;
 }
+.hideImg {
+    display: flex;
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 86%;
+    left: 93%;
+} 
+.hideText {
+    background: none;
+    border: none;
+    color: rgb(212, 212, 212);
+    cursor: pointer;
+    font-size: 13px;
+}
+.xText {
+    display: inline-block;
+    border: solid 1px;
+    padding: 0 2px 0 2px;
+    margin-right: 3px;
+}
 
 .title-main {
     color: white;
@@ -28,12 +50,3 @@
     padding: 20px 0px;
     text-align: left; 
 }
-.hideImg {
-    display: flex;
-    float: right;
-    font-size: 16px;
-    cursor: pointer;
-    position: absolute;
-    top: 86%;
-    left: 94%;
-} 

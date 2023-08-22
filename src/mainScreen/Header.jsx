@@ -22,7 +22,10 @@ function Header(props) {
               height="780px"
             />
             <div className="hideImg">
-              <button onClick={removeImage}>이미지 없애기</button>
+              <button className="hideText" onClick={removeImage}>
+                <p className="xText">X</p>
+                이미지 없애기
+              </button>
             </div>
             <div className="title-main">
               <div className="mainPhototext">개발, AI 인공지능, 보안</div>
