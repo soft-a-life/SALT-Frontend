@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import './NavigationBar.css'
 import logoImage from '../img/logo2.png'
 import { useCookies } from 'react-cookie'
-import LoginAuthorization from './utilts/LoginAuthorization'
+import TokenRefresh from './utilts/TokenRefresh'
 
 function NavigationBar(props) {
   const [cookies, setCookie, removeCookie] = useCookies(['accessToken'])
 
   const loggedOut = () => {
     return cookies.accessToken ? (
-      <button onClick={() => LoginAuthorization()}>로그인 연장</button>
+      <button onClick={() => TokenRefresh()}>로그인 연장</button>
     ) : (
       <Link to="/loginScreen">
         <button className="login-button">로그인</button>

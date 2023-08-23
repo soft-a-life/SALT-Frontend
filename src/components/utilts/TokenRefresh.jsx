@@ -1,6 +1,6 @@
 import { useCookies } from 'react-cookie'
 
-function LoginAuthorization() {
+function TokenRefresh() {
   const [cookies, setCookie] = useCookies(['accessToken', 'refreshToken'])
   try {
     fetch('http://localhost:8080/accounts/refreshToken', {
@@ -25,4 +25,4 @@ function LoginAuthorization() {
   }
 }
 
-export default LoginAuthorization
+export default TokenRefresh
