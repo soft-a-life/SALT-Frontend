@@ -1,20 +1,21 @@
-import { useCallback, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import type { RemirrorJSON } from 'remirror'
 import { OnChangeJSON } from '@remirror/react'
 import { WysiwygEditor } from '@remirror/react-editors/wysiwyg'
+import { ImageExtension } from 'remirror/extensions'
 
 const STORAGE_KEY = 'remirror-editor-content'
 
 const WEditor: React.FC = () => {
   const [initialContent] = useState<RemirrorJSON | undefined>(() => {
     // Retrieve the JSON from localStorage (or undefined if not found)
-    const content = window.localStorage.getItem(STORAGE_KEY)
+    const content = localStorage.getItem(STORAGE_KEY)
     return content ? JSON.parse(content) : undefined
   })
 
   const handleEditorChange = useCallback((json: RemirrorJSON) => {
     // Store the JSON in localStorage
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(json))
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(json))
   }, [])
 
   return (
