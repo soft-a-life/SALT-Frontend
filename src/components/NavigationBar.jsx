@@ -47,7 +47,11 @@ function NavigationBar(props) {
             <button className="menu-item">개발자들</button>
           </div>
           <div className="menu-option">
-            {cookies.loginToken ? <p>{cookies.userDate.user_Id}</p> : loggedOut()}
+            {cookies.loginToken ? (
+              <p>{cookies.userDate.user_Id}</p>
+            ) : (
+              loggedOut()
+            )}
             {registerCheck()}
           </div>
         </div>
