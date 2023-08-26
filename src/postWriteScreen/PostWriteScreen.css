@@ -1,0 +1,22 @@
+ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    margin: 0 5% 0 5%;
+}
+li {
+    border-radius: 15px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.selected {
+    background-color: #f5f5dc;
+}
+li:hover {
+    background-color: #ddd;
+}

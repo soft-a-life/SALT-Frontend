@@ -3,22 +3,25 @@ import { Link } from 'react-router-dom'
 import './NavigationBar.css'
 import logoImage from '../img/logo2.png'
 import { useCookies } from 'react-cookie'
+import TokenRefresh from './utilts/TokenRefresh'
 
 function NavigationBar(props) {
-  const [cookies, setCookie, removeCookie] = useCookies(['loginToken'])
+  const [cookies, setCookie, removeCookie] = useCookies(['accessToken'])
 
   const loggedOut = () => {
-    return (
+    return cookies.accessToken ? (
+      <button onClick={() => TokenRefresh()}>로그인 연장</button>
+    ) : (
       <Link to="/loginScreen">
         <button className="login-button">로그인</button>
       </Link>
     )
   }
   const registerCheck = () => {
-    return cookies.loginToken ? (
+    return cookies.accessToken ? (
       <button
         className="LoginOut-button"
-        onClick={() => removeCookie('loginToken')}
+        onClick={() => removeCookie('accessTokenToken')}
       >
         로그아웃
       </button>

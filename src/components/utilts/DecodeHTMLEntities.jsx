@@ -3,5 +3,4 @@ function DecodeHTMLEntities(str) {
     return String.fromCharCode(dec)
   })
 }
-
 export default DecodeHTMLEntities
