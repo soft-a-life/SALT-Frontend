@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import './LoginScreen.css'
+import logoImageqq from '../../img/logo2.png'
 
 function LoginScreen() {
   const [cookies, setCookie, removeCookie] = useCookies(['loginToken'])
@@ -37,30 +38,32 @@ function LoginScreen() {
   }
 
   return (
-    <div className={'loginScreen'}>
-      <h2 className="loginTitle">로그인</h2>
-      <div className="inputContainer">
-        <input
-          value={form.userId}
-          onChange={(e) => onChange(e)}
-          placeholder={'아이디를 입력하세요'}
-        />
-        <input
-          value={form.userPw}
-          onChange={(e) => onChange(e)}
-          placeholder={'비밀번호를 입력하세요'}
-        />
-      </div>
-      <div className="buttonContainer">
-        <button onClick={() => loginConstraints()} className="loginButton">
-          로그인
-        </button>
-        <Link to={'/signUpScreen'}>
-          <button className="signupButton">회원가입</button>
-        </Link>
-        <Link to={'/searchIdScreen'} className="findIdPwLink">
-          아이디/비밀번호 찾기
-        </Link>
+    <div className={'loginScreen_back'}>
+      <div className={'loginScreen'}>
+        <img className="logoImageqq" alt="로고 이미지" />
+        <div className="inputContainer">
+          <input
+            value={form.userId}
+            onChange={(e) => onChange(e)}
+            placeholder={' 아이디를 입력하세요'}
+          />
+          <input
+            value={form.userPw}
+            onChange={(e) => onChange(e)}
+            placeholder={' 비밀번호를 입력하세요'}
+          />
+        </div>
+        <div className="buttonContainer">
+          <button onClick={() => loginConstraints()} className="loginButton">
+            로그인
+          </button>
+          <Link to={'/signUpScreen'}>
+            <button className="signupButton">회원가입</button>
+          </Link>
+          <Link to={'/searchIdScreen'} className="findIdPwLink">
+            아이디/비밀번호 찾기
+          </Link>
+        </div>
       </div>
     </div>
   )

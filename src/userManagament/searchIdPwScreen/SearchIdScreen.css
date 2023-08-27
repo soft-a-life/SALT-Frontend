@@ -1,14 +1,17 @@
-body {
-  background-color: #E5ECF3;
-  margin: 0; /* 여백 제거 */
-
-}
-
 .searchIdScreenContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #cccccc4a;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 3.5px rgba(0, 0, 0, 0.1);
+}
+
+.expanded {
+  height: 450px; 
+  transition: height 0.3s ease; 
+  box-shadow: none;
 }
 
 .searchIdScreen {
@@ -16,21 +19,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-family: 'Inter', sans-serif;
   width: 500px;
   height: 250px;
   padding: 20px 30px;
   background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   transition: height 0.3s ease-in-out;
-
 }
 
 .searchIdScreen.expanded {
-  height: 350px; 
-  transition: height 0.3s ease; 
+  height: 350px;
+  box-shadow: none;
+  transition: height 0.3s ease;
 }
 
 .searchIdScreen__header {
@@ -42,8 +43,8 @@ body {
 
 .searchIdScreen__header h3 {
   position: relative;
-  flex-basis: 50%; /* 50%의 너비를 가진 두 h3 태그 */
-  text-align: center; /* 텍스트를 중앙 정렬 */
+  flex-basis: 50%; 
+  text-align: center;
   color: #888;
   cursor: pointer;
   padding-bottom: 10px;
@@ -65,10 +66,6 @@ body {
   border-bottom: 2px solid #0500FF;
   color: #0500FF;
 }
-
-/*.searchIdScreen__header h3.active:after {
-  border-bottom: 2px solid #007bff;
-}*/
 
 .searchIdScreen__header h3:hover {
   background-color: #e9e9e9;
@@ -106,7 +103,7 @@ body {
 .emailCodeVerification__note {
   font-family: Inter;
   font-size: 15px;
-  color: #474747; /* Gray color for the note */
+  color: #474747;
   flex: 1;
   margin-left: -230px;
   margin-top: 10px;
@@ -129,9 +126,3 @@ body {
 .timeSection p {
   margin-right: 10px; 
 }
-
-
-
-
-
-  

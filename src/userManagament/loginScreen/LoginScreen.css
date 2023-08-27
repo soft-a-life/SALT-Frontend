@@ -1,7 +1,11 @@
+.loginScreen_back {
+  background-color: #ffffff !important;
+} 
+
 .loginScreen {
-  width: 450px;
+  background-color: #ffffff;
+  width: 380px;
   height: 500px;
-  background: #fffdfd;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,10 +14,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 0.05px solid rgb(222, 218, 218);
-  border-radius: 7px;
+  border: 0.05px solid rgba(129, 129, 129, 0.624);
+  border-radius: 3px;
   padding: 50px;
-  box-shadow: 0 5px 18px -7px rgba(147, 146, 146, 0.175);
+  box-shadow: 0px 5px 18px 5px rgba(147, 146, 146, 0.175);
 }
 
 .logo {
@@ -23,25 +27,10 @@
   transform: translateX(-50%);
 }
 
-.LoginScreenBackground {
-  background-color: #dfdfdf3b;
-  width: 100vw;
-  height: 100vh;
-}
-
-/*.loginScreen .loginTitle {   
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: bold;
-}*/
-
-.loginScreen .inputContainer {
+.inputContainer {
   position: absolute;
   top: 130px;
-  width: 60%;
+  width: 70%;
 }
 
 .loginScreen input {
@@ -49,7 +38,7 @@
   width: 100%;
   height: 40px;
   margin-top: 30px;
-  border: 0.3px solid #3c3c3c;
+  border: 0.3px solid #82828272;
   border-radius: 3px;
 }
 
@@ -77,7 +66,7 @@
 .loginScreen button:hover {
   color: #000000;
   background: #fff;
-  border: 2px solid #000;
+  border: 1.5px solid #777777;
 }
 
 .loginScreen input::placeholder {
@@ -100,7 +89,7 @@
   transform: translateX(-50%);
 }
 
-.loginScreen .findIdPwLink {     /*아이디/비밀번호 찾기*/
+.loginScreen .findIdPwLink {    
   position: absolute;
   left: 0px;
   top: 220px;
@@ -115,4 +104,9 @@
 .loginScreen .findIdPwLink:hover {
   color: #000000;
   text-decoration: underline;
+}
+
+.logoImageqq {
+  position: absolute;
+  top: 50px;
 }

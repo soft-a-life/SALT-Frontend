@@ -7,7 +7,7 @@ function Timer({ timeOut }) {
   useEffect(() => {
     const countdown = setInterval(() => {
       if (seconds > 0) {
-        setSeconds(seconds - 1) 
+        setSeconds(seconds - 1)
       }
       if (seconds === 0) {
         if (minutes === 0) {
@@ -24,7 +24,7 @@ function Timer({ timeOut }) {
     return () => clearInterval(countdown)
   }, [minutes, seconds])
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex' }} style={{ color: '#f20505' }}>
       0{minutes} : {seconds}
     </div>
   )

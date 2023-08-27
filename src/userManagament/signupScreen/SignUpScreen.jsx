@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './SignUpScreen.css'
 
-const SignUpScreen = () => {
+const SignUpForm = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -9,6 +9,10 @@ const SignUpScreen = () => {
     nickname: '',
     email: '',
   })
+
+  const formRef = useRef(null)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [isUsernameAvailable, setIsUsernameAvailable] = useState(true)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -18,33 +22,62 @@ const SignUpScreen = () => {
     }))
   }
 
+  const handleCheckUsername = () => {
+    // 이곳에 아이디 중복 확인 로직을 작성
+    // 중복 확인 로직이 완료되면 setIsUsernameAvailable(true/false)를 설정
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    // 여기서 폼 데이터를 서버로 전송하는 로직을 작성합니다.
-    console.log(formData)
+
+    if (!formData.username || !formData.password) {
+      setErrorMessage('아이디와 비밀번호를 입력하세요.')
+    } else {
+      setErrorMessage('')
+      console.log('Form submitted:', formData)
+    }
   }
 
   return (
     <div className="sign-up-form-container">
-      <form className="sign-up-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="label" htmlFor="username">
+      <form className="sign-up-form" onSubmit={handleSubmit} ref={formRef}>
+        <div className="Title_">
+          <div>회원가입</div>
+        </div>
+        <div className="SubTitle_">
+          <div>회원이 되어 더 많은 서비스를 경험하세요!</div>
+        </div>
+        <div className="content_">*은 필수 입력란 입니다.</div>
+        <div className="ID-form">
+          <div className="label_" htmlFor="username">
             아이디
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="아이디를 입력하세요."
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+            <span style={{ color: '#ff0000' }}>*</span>
+          </div>
+          <div className="input-wrapper">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="아이디를 입력하세요."
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <button
+              type="button"
+              className="check-username-button"
+              onClick={handleCheckUsername}
+            >
+              중복확인
+            </button>
+          </div>
+          {!isUsernameAvailable && <p>이미 사용 중인 아이디입니다.</p>}
         </div>
         <div className="form-group">
-          <label className="label" htmlFor="password">
+          <div className="label_" htmlFor="password">
             비밀번호
-          </label>
+            <span style={{ color: '#ff0000' }}>*</span>
+          </div>
           <input
             type="password"
             id="password"
@@ -56,9 +89,9 @@ const SignUpScreen = () => {
           />
         </div>
         <div className="form-group">
-          <label className="label" htmlFor="name">
+          <div className="label_" htmlFor="name">
             이름
-          </label>
+          </div>
           <input
             type="text"
             id="name"
@@ -66,13 +99,12 @@ const SignUpScreen = () => {
             placeholder="이름을 입력하세요."
             value={formData.name}
             onChange={handleChange}
-            required
           />
         </div>
         <div className="form-group">
-          <label className="label" htmlFor="nickname">
+          <div className="label_" htmlFor="nickname">
             닉네임
-          </label>
+          </div>
           <input
             type="text"
             id="nickname"
@@ -80,13 +112,12 @@ const SignUpScreen = () => {
             placeholder="닉네임을 입력하세요."
             value={formData.nickname}
             onChange={handleChange}
-            required
           />
         </div>
         <div className="form-group">
-          <label className="label" htmlFor="email">
+          <div className="label_" htmlFor="email">
             이메일
-          </label>
+          </div>
           <input
             type="email"
             id="email"
@@ -94,16 +125,17 @@ const SignUpScreen = () => {
             placeholder="이메일을 입력하세요."
             value={formData.email}
             onChange={handleChange}
-            required
           />
         </div>
-
-        <div style={{ display: 'flex', justifyContent: 'right' }}>
-          <button type="submit">회원가입</button>
+        <div className="form-group">
+          <button type="submit" className="sign-up_button">
+            회원가입
+          </button>
         </div>
+        {errorMessage && <p>{errorMessage}</p>}
       </form>
     </div>
   )
 }
 
-export default SignUpScreen
+export default SignUpForm
