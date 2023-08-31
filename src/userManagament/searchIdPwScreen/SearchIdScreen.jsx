@@ -57,11 +57,13 @@ function SearchIdScreen(props) {
   const handleIdFindClick = () => {
     setIsSearchCheck(true)
     setIsBoxExpanded(false)
+    setIsExpanded(false)
     searchTypeChange()
   }
   const handlePwFindClick = () => {
     setIsSearchCheck(false)
     setIsBoxExpanded(false)
+    setIsExpanded(false)
     searchTypeChange()
   }
 

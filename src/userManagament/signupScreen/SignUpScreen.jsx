@@ -58,7 +58,7 @@ const SignUpForm = () => {
               type="text"
               id="username"
               name="username"
-              placeholder="아이디를 입력하세요."
+              placeholder="아이디 입력(6~20자)"
               value={formData.username}
               onChange={handleChange}
               required
@@ -82,7 +82,7 @@ const SignUpForm = () => {
             type="password"
             id="password"
             name="password"
-            placeholder="비밀번호를 입력하세요."
+            placeholder="비밀번호 입력(문자, 숫자, 특수문 포함 8~20자)"
             value={formData.password}
             onChange={handleChange}
             required
