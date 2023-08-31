@@ -24,7 +24,7 @@ function Timer({ timeOut }) {
     return () => clearInterval(countdown)
   }, [minutes, seconds])
   return (
-    <div style={{ display: 'flex' }} style={{ color: '#f20505' }}>
+    <div style={{ display: 'flex', color: '#f20505' }}>
       0{minutes} : {seconds}
     </div>
   )
