@@ -23,9 +23,7 @@ function NavigationBar(props) {
         로그아웃
       </button>
     ) : (
-      <Link to="/signUpScreen">
-        <button className="Register-button">회원가입</button>
-      </Link>
+      <div className={'naviBlank'}></div>
     )
   }
   return (
@@ -43,8 +41,16 @@ function NavigationBar(props) {
         </Link>
         <div className="special-menu">
           <div className="menu-list">
-            <button className="menu-item">SAL</button>
-            <button className="menu-item">개발자들</button>
+            <div className="hover-box">
+              <button className="menu-item">SAL</button>
+              <button className="menu-hover">
+                공사중!<span class="hover-cross">X</span>
+              </button>
+            </div>
+            <div className="hover-box">
+              <button className="menu-item">개발자들</button>
+              <button className="menu-hover">공사중!</button>
+            </div>
           </div>
           <div className="menu-option">
             {cookies.loginToken ? (
