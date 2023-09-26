@@ -14,6 +14,7 @@ import {
   ThemeProvider,
   useRemirror,
 } from '@remirror/react'
+import { useCookies } from 'react-cookie'
 
 interface ProseMirrorJSON {
   type: string
@@ -36,31 +37,43 @@ class FigcaptionExtension extends ImageExtension {
     }
   }
 }
-function extractImageNodes(data: ProseMirrorJSON[]): ProseMirrorJSON[] {
-  const imageNodes: ProseMirrorJSON[] = []
-
-  data.forEach((node) => {
-    if (node.type === 'image') {
-      imageNodes.push(node)
-      console.log('node.type=', node)
-    }
-    if (node.content) {
-      const childImageNodes = extractImageNodes(node.content)
-      imageNodes.push(...childImageNodes)
-    }
-  })
-  return imageNodes
-}
-const extensions = () => [new FigcaptionExtension()]
-const STORAGE_KEY = 'remirror-editor-content'
-
 const WEditor = (): React.JSX.Element => {
+  const [cookies, setCookie, removeCookies] = useCookies(['accessToken'])
+  const extensions = () => [new FigcaptionExtension()]
+  const STORAGE_KEY = 'remirror-editor-content'
   const { manager, state, onChange } = useRemirror({
     extensions,
   })
+  const imageUpdate = (imageNode: ProseMirrorJSON): any => {
+    fetch('http://localhost:8080/imageUpload', {
+      method: 'POST',
+      headers: cookies,
+      body: JSON.stringify(imageNode),
+    })
+      .then((res) => {
+        return res
+      })
+      .catch((e) => {
+        alert('이미지 처리에 오류가 발생했습니다.')
+      })
+  }
+  const extractImageNodes = (data: ProseMirrorJSON[]): ProseMirrorJSON[] => {
+    const imageNodes: ProseMirrorJSON[] = []
+
+    data.forEach((node) => {
+      if (node.type === 'image') {
+        imageNodes.push(imageUpdate(node))
+      }
+      if (node.content) {
+        const childImageNodes = extractImageNodes(node.content)
+        imageNodes.push(...childImageNodes)
+      }
+    })
+    return imageNodes
+  }
+
   const handleEditorChange = useCallback((json: RemirrorJSON) => {
     const imageNodes = extractImageNodes([json])
-    console.log('imageNodes', imageNodes)
     localStorage.setItem(STORAGE_KEY, JSON.stringify(json))
   }, [])
   return (
