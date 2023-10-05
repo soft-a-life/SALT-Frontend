@@ -6,7 +6,7 @@ import PostViewScreen from './postViewScreen/PostViewScreen'
 import NavigationBar from './components/NavigationBar'
 import LoginScreen from './userManagament/loginScreen/LoginScreen'
 import SignUpScreen from './userManagament/signupScreen/SignUpScreen'
-import PostWriteScreen from './PostWriteScreen/PostWriteScreen'
+import PostWriteScreen from './postWriteScreen/PostWriteScreen'
 import SearchIdScreen from './userManagament/searchIdPwScreen/SearchIdScreen'
 
 function App() {
